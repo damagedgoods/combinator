@@ -7,8 +7,8 @@ from django.template import loader
 from .models import Collection, Part, Item
 import json
 
-def test(request):
-    return HttpResponse("This is a test")
+def index(request):
+    return HttpResponse("This is the index!")
 
 def collection(request, collection_id):
     template = loader.get_template("collection.html")
