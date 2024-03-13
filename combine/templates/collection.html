@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Scenomatic</title>
+    <script src="{% static 'js/script.js' %}" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="main">		
+		<a href="#" onclick="javascript:changeCollection()">{{ collection_name }} &rarr; </a>
+		<div id="collection-selector">
+			<ul id="collections">
+				{% for c in collections %}
+					<li><a href="../{{ c.id }}">{{ c.name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>	
+		<ul id="items"></ul>
+	</div>
+
+	<button onclick="javascript:run()">Refresh</button>
+
+
+</body>
+</html>
+
+<script>load({{ id }});</script>
