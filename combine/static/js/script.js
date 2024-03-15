@@ -77,10 +77,9 @@ function toggleShare() {
 }
 
 function copyURL(collection_id) {
-  console.log("Copiado!");
   var item = document.getElementById("share-url-link");
   navigator.clipboard.writeText("http://damagedgoods.pythonanywhere.com/combine/collection/"+collection_id);
-  item.innerHTML = "Copiado!"
+  item.innerHTML = "Copied!"
   sleep(1000).then(() => {
     document.getElementById("share-url").style.opacity = "0";
     sleep(1000).then(() => {
