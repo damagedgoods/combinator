@@ -18,11 +18,10 @@ body {
 }
 
 #main {	
-	position: absolute;
-	top: 64px;	
-	left: 64px;
+    margin: 64px;
 	text-align: left;
 	padding: 0;
+    width: 100%;
 }
 
 a {
@@ -30,6 +29,24 @@ a {
 	text-decoration: none;
 	color: #111;
 	display: inline-block;	
+    transition: color 0.2s ease;
+}
+
+a#share-action {
+    position: absolute;
+    right: 64px;
+}
+
+div#share-url {
+    position: absolute;
+    right: 140px;
+    top: 64px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    color: orange;
 }
 
 #collection-selector{	

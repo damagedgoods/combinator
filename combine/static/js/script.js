@@ -39,7 +39,6 @@ function run() {
     el.style.opacity = 0;
   }
 
-  
   sleep(400).then(() => {
     for (k in keys) {
       items = data[keys[k]];
@@ -65,4 +64,27 @@ function changeCollection() {
       item.style.opacity = "0";
     }
   }
+}
+
+function toggleShare() {
+  var item = document.getElementById("share-url");
+  console.log(item);
+  if (item.style.opacity != "1") {
+    item.style.opacity = "1";
+  } else {
+    item.style.opacity = "0";
+  }
+}
+
+function copyURL(collection_id) {
+  console.log("Copiado!");
+  var item = document.getElementById("share-url-link");
+  navigator.clipboard.writeText("http://damagedgoods.pythonanywhere.com/combine/collection/"+collection_id);
+  item.innerHTML = "Copiado!"
+  sleep(1000).then(() => {
+    document.getElementById("share-url").style.opacity = "0";
+    sleep(1000).then(() => {
+      item.innerHTML = "Click to copy URL";
+    })
+  })
 }
