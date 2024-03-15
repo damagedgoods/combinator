@@ -20,10 +20,10 @@ function load(id) {
       el = document.createElement('li');
       el.id = keys[k];
       el.classList.add("item");
+      el.style.cssText += "opacity:1;--n:"+i;
       list.appendChild(el);
-      el.style["--n"] = i;
-      el.style.opacity = 1;
     }
+    
     run()
   })
   .catch(error => {
@@ -39,7 +39,8 @@ function run() {
     el.style.opacity = 0;
   }
 
-  sleep(500).then(() => {
+  
+  sleep(400).then(() => {
     for (k in keys) {
       items = data[keys[k]];
       document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
