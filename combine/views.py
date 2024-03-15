@@ -8,7 +8,12 @@ from .models import Collection, Part, Item
 import json
 
 def index(request):
-    return HttpResponse("This is the index!")
+    template = loader.get_template("index.html")
+    collections = Collection.objects.all()
+    context = {
+        "collections": collections
+    }
+    return HttpResponse(template.render(context, request))
 
 def collection(request, collection_id):
     template = loader.get_template("collection.html")
