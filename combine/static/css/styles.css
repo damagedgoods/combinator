@@ -4,7 +4,7 @@
 	font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
-	font-style: normal;	
+	font-style: normal;	    
 }
 
 body {
@@ -49,8 +49,9 @@ ul#items{
 ul li {
 	display: block;
 	font-size: 96px;
-	font-weight: 400;
-	color: #111;	
+	font-weight: 700;
+	color: #111;
+    letter-spacing: -0.02em;
 	transition: opacity 0.2s ease;
 }
 ul#collections li {
@@ -66,17 +67,28 @@ button {
 	background-color: black;
     color: white; /* Color del texto */
     border: none; /* Para eliminar los bordes predeterminados */
-    border-radius: 32px; /* Bordes redondeados */
-	width: 150px;
-    padding: 10px 20px; /* Ajuste del espaciado interno */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-	font-family: "Rubik", sans-serif;
+    border-radius: 60px; /* Bordes redondeados */
+    padding: 10px; /* Ajuste del espaciado interno */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */	
 	font-optical-sizing: auto;
 	font-weight: 300;
-	font-style: normal;	
-    font-size: 32px; /* Tamaño de la fuente */
+	font-style: normal;
+    text-align: center;
+    font-size: 60px; /* Tamaño de la fuente */
+    width: 120px;
+    height: 120px;
+
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+    transition-timing-function: ease-in-out;
+}
+
+button:hover {
+    background-color: orange;
+    transform: rotate(90deg);
 }
 
 button:active {
     transform: translateY(2px); /* Bajar el botón 2px cuando se presiona */
+    transform: rotate(90deg);
 }
