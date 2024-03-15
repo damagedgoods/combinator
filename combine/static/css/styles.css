@@ -125,3 +125,61 @@ button:active {
     transform: translateY(2px);
     transform: rotate(90deg);
 }
+
+
+form {
+    margin: 64px 0 0 0;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 32px 0 0 0;
+}
+
+span.explanation {
+    display: none;
+    font-size: 16px;
+    font-weight: 400px;
+    margin: 8px 0 0 0;
+}
+
+input {
+    margin: 16px 0 0 0;
+    border: none;
+    border-bottom: 2px solid #111;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+input:focus{
+    outline: none;
+}
+
+input[type=submit] {
+	position: absolute;
+	left: 64px;
+	bottom: 64px;
+	background-color: black;
+    color: white;
+    border: none;
+    border-radius: 60px;
+    padding: 10px;
+    cursor: pointer;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+    text-align: center;
+    font-size: 60px;
+    width: 120px;
+    height: 120px;
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+    transition-timing-function: ease-in-out;
+}
+
+input[type=submit]:hover {
+    background-color: orange;
+    transform: rotate(90deg);
+}

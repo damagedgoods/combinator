@@ -3,6 +3,8 @@ import sys
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
+from django.shortcuts import redirect
+
 
 from .models import Collection, Part, Item
 import json
@@ -10,11 +12,26 @@ import json
 def index(request):    
     template = loader.get_template("index.html")
     collections = Collection.objects.all()
-    print(collections)
     context = {
         "collections": collections
     }
     return HttpResponse(template.render(context, request))
+
+def new(request):
+    template = loader.get_template("new.html")
+    context = {
+    }
+    return HttpResponse(template.render(context, request))
+
+def create(request):
+    name = request.POST.get('name')
+    password = request.POST.get('password')
+    # print(str(name)+" - "+str(password))
+
+    c = Collection(name=name)
+    c.save()
+
+    return redirect("index")
 
 def collection(request, collection_id):
     template = loader.get_template("collection.html")

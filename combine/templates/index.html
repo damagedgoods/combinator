@@ -17,8 +17,10 @@
 		<ul id="collections_list">
 			{% for c in collections %}
 				<li><a href="./collection/{{ c.id }}">{{ c.name }} &rarr;</a></li>
-			{% endfor %}
+			{% endfor %}			
+			<li><a href="./collection/new">Create a new one... &rarr;</a></li>
 		</ul>
+		
 	</div>	
 
 </body>

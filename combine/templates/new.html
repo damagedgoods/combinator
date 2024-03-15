@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Scenomatic</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div id="main">
+		<a href="../..">&larr; Back</a>				
+
+		<form class="new" action="../create/" method="post">
+			{% csrf_token %}
+
+			<label>Collection name</label>
+			<span class="explanation">How would you call this random generator?</span>
+			<input type="" id="name" name="name"/>
+
+			<label>Password</label>
+			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
+			<input type="" id="password" name="password"/>
+
+			<label>Values</label>
+			<span class="explanation">Drag & drop an excel or CSV file with your values. We will create a category for each column</span>
+		
+			<input type="submit" value="&rarr;"></input>
+		</form>
+
+	</div>
+
+</body>
+</html>
