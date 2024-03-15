@@ -14,15 +14,12 @@
 <body>
 
 	<div id="main">
-		Collections
-		<ul id="collections">
+		<ul id="collections_list">
 			{% for c in collections %}
-				<li><a href="./collection/{{ c.id }}">{{ c.name }}</a></li>
+				<li><a href="./collection/{{ c.id }}">{{ c.name }} &rarr;</a></li>
 			{% endfor %}
 		</ul>
 	</div>	
 
 </body>
 </html>
-
-<script>load({{ id }});</script>

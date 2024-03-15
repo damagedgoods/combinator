@@ -53,20 +53,29 @@ a:hover {
 	display: inline-block;
 }
 
+
+
 ul {}
 ul#collections {
 	margin: 0 0 0 32px;
     display: inline-block;
 }
+
+ul#collections_list li{
+    height: 80px;
+}
+ul#collections_list li a{
+    font-size: 64px;
+    font-weight: 800;
+}
+
 ul#items{
 	margin: 32px 0 0 0;
 }
-
 ul li.item{
     transition: opacity 0.2s ease;
     transition-delay: calc(var(--n)*0.1s);
 }
-
 ul li {
 	display: block;
 	font-size: 96px;
@@ -82,7 +91,6 @@ ul#collections li {
     opacity: 0;
     transition: opacity 0.2s ease;
     transition-delay: calc(var(--n)*0.1s);
-
 }
 
 button {

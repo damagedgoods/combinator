@@ -7,9 +7,10 @@ from django.template import loader
 from .models import Collection, Part, Item
 import json
 
-def index(request):
+def index(request):    
     template = loader.get_template("index.html")
     collections = Collection.objects.all()
+    print(collections)
     context = {
         "collections": collections
     }
