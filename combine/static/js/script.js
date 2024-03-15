@@ -35,10 +35,13 @@ function randomNumber(min, max) {
 
 function changeCollection() {
 
-  var c = document.getElementById("collection-selector");
-  if (c.style.visibility != "visible") {
-    c.style.visibility = "visible";
-  } else {
-    c.style.visibility = "hidden";
+  var items = document.getElementsByClassName("collection-item");
+  for (i=0; i< items.length; i++) {
+    item = items[i];
+    if (item.style.opacity != "1") {
+      item.style.opacity = "1";
+    } else {
+      item.style.opacity = "0";
+    }
   }
 }

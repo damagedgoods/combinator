@@ -34,7 +34,6 @@ a {
 
 #collection-selector{	
 	display: inline-block;
-    visibility: hidden;
 }
 
 ul {}
@@ -52,12 +51,16 @@ ul li {
 	font-weight: 700;
 	color: #111;
     letter-spacing: -0.02em;
-	transition: opacity 0.2s ease;
+	
 }
 ul#collections li {
 	display: inline-block;
 	padding: 0 32px 0 0;
 	font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    transition-delay: calc(var(--n)*0.1s);
+
 }
 
 button {
@@ -89,6 +92,6 @@ button:hover {
 }
 
 button:active {
-    transform: translateY(2px); /* Bajar el botón 2px cuando se presiona */
+    transform: translateY(2px);
     transform: rotate(90deg);
 }

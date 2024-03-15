@@ -19,7 +19,7 @@
 		<div id="collection-selector">
 			<ul id="collections">
 				{% for c in collections %}
-					<li><a href="../{{ c.id }}">{{ c.name }}</a></li>
+					<li class="collection-item" style="--n: {{c.id}}"><a href="../{{ c.id }}">{{ c.name }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>	
