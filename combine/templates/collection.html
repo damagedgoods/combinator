@@ -15,6 +15,7 @@
 <body>
 
 	<div id="main">		
+		<!--
 		<a href="#" onclick="javascript:changeCollection()">{{ collection_name }} &rarr; </a>		
 		<div id="collection-selector">
 			<ul id="collections">
@@ -22,7 +23,8 @@
 					<li class="collection-item" style="--n: {{c.id}}"><a href="../{{ c.id }}">{{ c.name }}</a></li>
 				{% endfor %}
 			</ul>
-		</div>
+		</div>-->
+		<a href="../..">&larr; Back</a>
 		<a href="#" id="share-action" onclick="javascript:toggleShare()">&larr; Share</a>
 		<div id="share-url"><a id="share-url-link" href="#" onclick="javascript:copyURL({{ id }})">Click to copy URL</a></div>
 		<ul id="items"></ul>
