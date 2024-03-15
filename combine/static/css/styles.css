@@ -45,6 +45,11 @@ ul#items{
 	margin: 32px 0 0 0;
 }
 
+ul li.item{
+    transition: opacity 0.2s ease;
+    transition-delay: calc(var(--n)*0.1s);
+}
+
 ul li {
 	display: block;
 	font-size: 96px;

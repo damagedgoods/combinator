@@ -1,6 +1,10 @@
 
 var data, keys;
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function load(id) {
 
   fetch('../../data/collection/'+id)
@@ -10,12 +14,17 @@ function load(id) {
     list = document.getElementById('items');
     list.innerHTML = '';
     keys = Object.keys(data);
+    i = 0;
     for (k in keys) {
+      i++;
       el = document.createElement('li');
       el.id = keys[k];
+      el.classList.add("item");
       list.appendChild(el);
+      el.style["--n"] = i;
+      el.style.opacity = 1;
     }
-    run();
+    run()
   })
   .catch(error => {
     console.error('Se produjo un error al cargar el archivo JSON:', error);
@@ -23,10 +32,21 @@ function load(id) {
 }
 
 function run() {
-  for (k in keys) {
-    items = data[keys[k]];
-    document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
+
+  var items = document.getElementsByClassName('item');
+  for (i=0; i< items.length; i++) {
+    el = items[i];    
+    el.style.opacity = 0;
   }
+
+  sleep(500).then(() => {
+    for (k in keys) {
+      items = data[keys[k]];
+      document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
+      document.getElementById(keys[k]).style.opacity = 1;
+    }      
+  })
+
 }
 
 function randomNumber(min, max) {
