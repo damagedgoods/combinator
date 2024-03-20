@@ -1,4 +1,5 @@
 import sys
+import csv
 
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
@@ -27,11 +28,45 @@ def create(request):
     name = request.POST.get('name')
     password = request.POST.get('password')
     # print(str(name)+" - "+str(password))
-
     c = Collection(name=name)
     c.save()
-
+    
+    # Read file and create parts & items
+    csvFile = request.FILES['csv']
+    data = str(csvFile.read())
+    print("Data: "+str(data))
     return redirect("index")
+
+    """
+    csvreader = csv.reader(csvFile)
+    for row in csvreader:
+        print(row)
+
+    
+    """
+
+    """
+    csv_data = pd.read_csv(
+        io.StringIO(
+            csv.read().decode("utf-8")
+        )
+    )
+    """
+    
+
+"""
+    for record in csv_data.to_dict(orient="records"):
+        try:
+            Students.objects.create(
+                first_name = record['first_name'],
+                last_name = record['last_name'],
+                marks = record['marks'],
+                roll_number = record['roll_number'],
+                section = record['section']
+            )
+        except Exception as e:
+            context['exceptions_raised'] = e
+"""
 
 def collection(request, collection_id):
     template = loader.get_template("collection.html")
