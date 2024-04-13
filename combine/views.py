@@ -33,19 +33,30 @@ def create(request):
     
     # Read file and create parts & items
     csvFile = request.FILES['csv']
-    data = str(csvFile.read())
-    print("Data: "+str(data))
+    #data = str(csvFile.read())
+    #print("Data: "+str(data))
+    
+    csvFile.seek(0)
+    reader = csv.reader(csvFile.read().decode('utf-8'))
+    
+    for row in reader:
+        print("-"+str(row))
+
     return redirect("index")
 
-    """
-    csvreader = csv.reader(csvFile)
+"""
+    lines = data.splitlines()
+    print("Mirando líneas")
+    for line in lines:
+        print("-"+line)
+    print("Miradas")
+
+        csvreader = csv.reader(csvFile)
     for row in csvreader:
         print(row)
 
     
-    """
 
-    """
     csv_data = pd.read_csv(
         io.StringIO(
             csv.read().decode("utf-8")
