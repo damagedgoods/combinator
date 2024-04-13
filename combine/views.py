@@ -31,53 +31,32 @@ def create(request):
     c = Collection(name=name)
     c.save()
     
-    # Read file and create parts & items
-    csvFile = request.FILES['csv']
-    #data = str(csvFile.read())
-    #print("Data: "+str(data))
-    
-    csvFile.seek(0)
-    reader = csv.reader(csvFile.read().decode('utf-8'))
-    
-    for row in reader:
-        print("-"+str(row))
+    content = request.FILES['csv'].read().decode('utf-8')
+
+    # Process the first one to know number of columns and create Parts
+    firstLine = content.partition('\n')[0]
+    columns = firstLine.strip().split(';')
+    parts = []
+    pos = 0
+    for column in columns:
+        pos += 1
+        if len(column) > 0:
+            newPart = Part(name="part"+str(pos), collection=c)
+            newPart.save()
+            parts.append(newPart)
+
+    # Then process the rest of lines to create Items
+    for row in content.splitlines():
+        newValues = row.strip().split(';')        
+        pos = 0
+        for v in newValues:
+            if len(v) > 0:
+                part = parts[pos]            
+                newItem = Item(value=v, part=part)
+                newItem.save()
+                pos += 1
 
     return redirect("index")
-
-"""
-    lines = data.splitlines()
-    print("Mirando líneas")
-    for line in lines:
-        print("-"+line)
-    print("Miradas")
-
-        csvreader = csv.reader(csvFile)
-    for row in csvreader:
-        print(row)
-
-    
-
-    csv_data = pd.read_csv(
-        io.StringIO(
-            csv.read().decode("utf-8")
-        )
-    )
-    """
-    
-
-"""
-    for record in csv_data.to_dict(orient="records"):
-        try:
-            Students.objects.create(
-                first_name = record['first_name'],
-                last_name = record['last_name'],
-                marks = record['marks'],
-                roll_number = record['roll_number'],
-                section = record['section']
-            )
-        except Exception as e:
-            context['exceptions_raised'] = e
-"""
 
 def collection(request, collection_id):
     template = loader.get_template("collection.html")
