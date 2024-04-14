@@ -56,7 +56,7 @@ def create(request):
                 newItem.save()
                 pos += 1
 
-    return redirect("index")
+    return redirect("collection", collection_id=c.id)
 
 def collection(request, collection_id):
     template = loader.get_template("collection.html")
