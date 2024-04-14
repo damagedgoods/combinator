@@ -7,5 +7,6 @@ urlpatterns = [
     path("collection/new/", views.new, name="new_collection"),
     path("collection/create/", views.create, name="create_collection"),
     path("collection/<int:collection_id>/", views.collection, name="collection"),
+    path("collection/<int:collection_id>/edit", views.edit, name="edit"),
     path("data/collection/<int:collection_id>/", views.itemsJSON, name="itemsJSON")
 ]

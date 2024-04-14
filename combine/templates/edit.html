@@ -14,23 +14,17 @@
 
 <body>
 
-	<div id="main">		
-		<a href="../..">&larr; Back</a>
-		<ul id="actions">
-			<li>
-				<a href="./edit" id="edit"">Edit</a>
-			</li>
-			<li>
-				<a href="#" id="share-action" onclick="javascript:toggleShare()">Share</a>
-			</li>
-		</ul>
-		<ul id="items"></ul>
+	<div id="main">
+        <a href="./">&larr; Back</a>
+        
+        {% for i in items %}
+        <ul class="edit_items">
+            {% for it in i %}
+				<li>{{ it.value }}</li>
+			{% endfor %}
+        </ul>
+        {% endfor %}
 	</div>
-
-	<button onclick="javascript:run()">&#8634;</button>
-
 
 </body>
 </html>
-
-<script>load({{ id }});</script>

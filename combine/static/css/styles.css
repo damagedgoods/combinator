@@ -23,10 +23,35 @@ body {
 }
 
 #main {	
-    margin: 64px;
+    margin: 5%;
 	text-align: left;
 	padding: 0;
-    width: 100%;
+    width: 90%;
+}
+
+ul#actions {
+    float: right;
+}
+
+ul#actions li {
+    display: block;
+    float: left;
+    margin: 0 0 0 20px;
+    letter-spacing: 0em;
+}
+
+ul.edit_items {
+    display: block;
+    width: 30%;
+    float: left;
+}
+
+ul.edit_items li{
+    text-decoration: none;
+    display: block;
+    font-size: 28px;
+    line-height: 48px;
+    font-weight: 600;
 }
 
 a {
@@ -38,9 +63,7 @@ a {
 }
 
 a#share-action {
-    position: absolute;
-    right: 64px;
-}
+    }
 
 div#share-url {
     position: absolute;
@@ -57,7 +80,6 @@ a:hover {
 #collection-selector{	
 	display: inline-block;
 }
-
 
 
 ul {}
@@ -77,11 +99,11 @@ ul#collections_list li a{
 ul#items{
 	margin: 32px 0 0 0;
 }
-ul li.item{
+ul#items li.item{
     transition: opacity 0.2s ease;
     transition-delay: calc(var(--n)*0.1s);
 }
-ul li {
+ul#items li {
 	display: block;
 	font-size: 96px;
 	font-weight: 700;

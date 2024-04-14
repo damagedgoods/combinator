@@ -69,6 +69,25 @@ def collection(request, collection_id):
         }
     return HttpResponse(template.render(context, request))
 
+def edit(request, collection_id):
+    template = loader.get_template("edit.html")
+    c = Collection.objects.get(pk=collection_id)
+
+
+    ## Obtengo los items disponibles para cada part
+    items = []
+    parts = Part.objects.filter(collection=c)
+    for p in parts:
+        items.append(Item.objects.filter(part=p))    
+    print(items)
+
+    context = {
+        "collection": c,
+        "collection_name": c.name,
+        "items": items
+        }
+    return HttpResponse(template.render(context, request))
+
 def itemsJSON(request, collection_id):
     c = Collection.objects.get(pk=collection_id)
     data = {}
