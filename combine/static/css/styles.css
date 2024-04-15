@@ -7,6 +7,10 @@
 	font-style: normal;	    
 }
 
+ul li {
+    list-style-type: none
+}
+
 ::selection {
     color: white;
     background: orange;
@@ -43,15 +47,27 @@ ul#actions li {
 ul.edit_items {
     display: block;
     width: 30%;
-    float: left;
+    float: left;    
 }
 
 ul.edit_items li{
-    text-decoration: none;
+}
+
+ul.edit_items li a{
     display: block;
+    width: 80%;
     font-size: 28px;
     line-height: 48px;
     font-weight: 600;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+ul.edit_items li a:hover{
+    background-color: orange;
+    color: white;
+    transition-duration: 0.3s;
+    transition-property: background-color, color;
+    transition-timing-function: ease-in-out;
 }
 
 a {
