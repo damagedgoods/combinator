@@ -53,7 +53,7 @@ ul.edit_items {
 ul.edit_items li{
 }
 
-ul.edit_items li a{
+ul.edit_items li{
     display: block;
     width: 80%;
     font-size: 28px;
@@ -62,12 +62,27 @@ ul.edit_items li a{
     border-radius: 10px;
     padding: 5px 10px;
 }
-ul.edit_items li a:hover{
+ul.edit_items li:hover{
     background-color: orange;
     color: white;
     transition-duration: 0.3s;
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+ul.edit_items li a {
+    line-height: 48px;
+    color: white;
+}
+
+a.deleteAction {
+    float: right;
+}
+
+a.deleteAction:hover {
+    color: white !important;
+    text-decoration: underline !important;
 }
 
 a {
@@ -98,7 +113,10 @@ a:hover {
 }
 
 
-ul {}
+ul {
+
+}
+
 ul#collections {
 	margin: 0 0 0 32px;
     display: inline-block;

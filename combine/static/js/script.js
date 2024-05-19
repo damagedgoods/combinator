@@ -84,6 +84,17 @@ function copyURL(collection_id) {
     document.getElementById("share-url").style.opacity = "0";
     sleep(1000).then(() => {
       item.innerHTML = "Click to copy URL";
-    })
+    }) 
   })
+}
+
+function deleteItem(item) {
+  fetch("/combine/data/item/delete/"+item.id+"/")
+  .then(response => response.json())
+  .then(data => {
+    if (data.message == "OK") {
+      item.parentNode.remove();
+    }
+  })
+  .catch(error => console.error('Error:', error));
 }

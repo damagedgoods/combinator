@@ -20,7 +20,7 @@
         {% for i in items %}
         <ul class="edit_items">
             {% for it in i %}
-				<li><a href="">{{ it.value }}</a></li>
+				<li>{{ it.value }}<a href="#" id={{it.id}} onclick="deleteItem(this)" class="deleteAction">Delete</a></li>
 			{% endfor %}
         </ul>
         {% endfor %}

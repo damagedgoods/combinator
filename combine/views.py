@@ -73,7 +73,6 @@ def edit(request, collection_id):
     template = loader.get_template("edit.html")
     c = Collection.objects.get(pk=collection_id)
 
-
     ## Obtengo los items disponibles para cada part
     items = []
     parts = Part.objects.filter(collection=c)
@@ -96,4 +95,11 @@ def itemsJSON(request, collection_id):
         for i in p.item_set.all():
             items.append(i.value)
         data[p.name] = items
+    return JsonResponse(data, safe=False)
+
+def deleteItemJSON(request, item_id):
+    i = Item.objects.get(pk=item_id)
+    i.delete()
+    data = {}
+    data["message"] = "OK"
     return JsonResponse(data, safe=False)
