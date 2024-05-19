@@ -78,10 +78,21 @@ ul.edit_items li a {
 
 a.deleteAction {
     float: right;
+    color: white !important;    
+}
+
+i.deleteIcon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/ico_trash.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    color: white;
 }
 
 a.deleteAction:hover {
-    color: white !important;
     text-decoration: underline !important;
 }
 
