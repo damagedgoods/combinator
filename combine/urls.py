@@ -10,5 +10,6 @@ urlpatterns = [
     path("collection/<int:collection_id>/edit", views.edit, name="edit"),
     path("data/collection/<int:collection_id>/", views.itemsJSON, name="itemsJSON"),
     path("data/item/delete/<int:item_id>/", views.deleteItemJSON, name='deleteItemJSON'),
+    path("data/item/new/", views.newItemJSON, name='newItemJSON'),
 ]
 

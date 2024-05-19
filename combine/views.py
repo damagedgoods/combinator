@@ -103,3 +103,15 @@ def deleteItemJSON(request, item_id):
     data = {}
     data["message"] = "OK"
     return JsonResponse(data, safe=False)
+
+def newItemJSON(request):    
+    # Extract values and create new element
+
+    # Recorrer todos los parámetros
+    for clave, valor in request.POST.items():
+        print(f"Clave: {clave}, Valor: {valor}")
+
+    # Return response
+    data = {}
+    data["message"] = "OK"
+    return JsonResponse(data, safe=False)

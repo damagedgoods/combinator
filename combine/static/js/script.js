@@ -98,3 +98,64 @@ function deleteItem(item) {
   })
   .catch(error => console.error('Error:', error));
 }
+
+function addItem(item) {
+  item.style.display = "None";
+  inputField = item.parentNode.getElementsByClassName("newItem")[0];
+  inputField.style.display = "inline-block";
+  inputField.focus();
+}
+
+function checksubmit(event) {
+  if (event.key === "Enter") {
+    submitItem(inputField);
+  }
+}
+
+function submitItem(item) {
+  console.log("Submitting item");
+  console.log(item.value)
+
+  // Send item to server, including Part ID and new value
+  fetch("/combine/data/item/new/", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "X-CSRFToken": csrfcookie(),
+    },
+    body: JSON.stringify({
+      part: "10000",
+      value: "POOOOO",
+    })
+  })
+  .catch(error => console.error('Error:', error));
+
+  newId = "999";
+  newName = item.value;
+
+  // If response is OK, get the ID and add the element to the list
+  var newNode = document.createElement("li")
+  newNode.innerHTML = "<span>"+newName+"</span><a href='#'' id="+newId+" onclick='deleteItem(this)'' class='deleteAction'><i class='deleteIcon'></i></a>"
+  item.parentNode.parentNode.appendChild(newNode);
+
+  // Enable next submit by showing again the +
+  item.value = "";
+  item.style.display = "None";
+  item.parentNode.getElementsByClassName("addItem")[0].style.display = "inline-block";
+}
+
+var csrfcookie = function() {
+  var cookieValue = null,
+      name = 'csrftoken';
+  if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) == (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+};

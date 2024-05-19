@@ -22,6 +22,10 @@
             {% for it in i %}
 				<li><span>{{ it.value }}</span><a href="#" id={{it.id}} onclick="deleteItem(this)" class="deleteAction"><i class="deleteIcon"></i></a></li>
 			{% endfor %}
+            <li class="newItemLi">
+                <a class="addItem" onclick="addItem(this)">+</a>
+                <input type="text" class= "newItem" id="newItem" onkeyup="checksubmit(event)"/>
+            </li>
         </ul>
         {% endfor %}
 	</div>

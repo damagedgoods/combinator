@@ -51,10 +51,11 @@ ul.edit_items {
 }
 
 ul.edit_items li{
-    display: block;
+    display: inline-block;
     width: 80%;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 10px;    
+    vertical-align: middle;
 }
 ul.edit_items li:hover{
     background-color: orange;
@@ -65,10 +66,14 @@ ul.edit_items li:hover{
     cursor: pointer;
 }
 
+ul.edit_items li.newItemLi:hover{
+    background-color: white;
+    color: white;
+}
+
 ul.edit_items li span{
     width: 90%;
-    font-size: 28px;
-    line-height: 48px;
+    font-size: 28px;   
     font-weight: 600;
     white-space: nowrap;
     display: inline-block;
@@ -76,10 +81,10 @@ ul.edit_items li span{
     text-overflow: ellipsis;
 }
 
-ul.edit_items li a.deleteAction {
-    line-height: 48px;
+ul.edit_items li a.deleteAction {    
     float: right;
-    color: white !important;    
+    color: white !important;
+    vertical-align: middle;
 }
 
 i.deleteIcon {
@@ -90,6 +95,22 @@ i.deleteIcon {
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;    
+}
+
+a.addItem {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+input.newItem {
+    display: none;
+    width: 100%;
+    font-size: 28px;
+    line-height: 48px;
+    font-weight: 600;
+    border-bottom: 3px solid;
+    background-color: transparent;
 }
 
 a {
