@@ -131,7 +131,7 @@ function submitItem(item) {
       // If response is OK, get the ID and add the element to the list
       var newNode = document.createElement("li")
       newNode.innerHTML = "<span>"+item.value+"</span><a href='#'' id="+data.id+" onclick='deleteItem(this)'' class='deleteAction'><i class='deleteIcon'></i></a>"
-      item.parentNode.parentNode.appendChild(newNode);
+      item.parentNode.parentNode.getElementsByTagName("ul")[0].appendChild(newNode);
 
       // Enable next submit by showing again the +
       item.value = "";

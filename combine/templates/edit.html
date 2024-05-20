@@ -16,18 +16,18 @@
 
 	<div id="main">
         <a href="./">&larr; Back</a>
-
         {% for p in data %}
-        <ul class="edit_items">
-
-            {% for it in p.items %}
+        <div class="edit_items">
+            <ul>
+                {% for it in p.items %}
 				<li><span>{{ it.value }}</span><a href="#" id={{it.id}} onclick="deleteItem(this)" class="deleteAction"><i class="deleteIcon"></i></a></li>
-			{% endfor %}
-            <li class="newItemLi">
+			    {% endfor %}
+            </ul>
+            <div class="newItemField">
                 <a class="addItem" onclick="addItem(this)">+</a>
                 <input type="text" class= "newItem" id="{{ p.partId }}" onkeyup="checksubmit(event)"/>
-            </li>
-        </ul>
+            </div>
+        </div>
         {% endfor %}
 	</div>
 

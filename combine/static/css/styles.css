@@ -44,20 +44,23 @@ ul#actions li {
     letter-spacing: 0em;
 }
 
-ul.edit_items {
+div.edit_items {
     display: block;
     width: 30%;
     float: left;    
 }
 
-ul.edit_items li{
+ul.edit_items {
+}
+
+div.edit_items ul li{
     display: inline-block;
     width: 80%;
     border-radius: 10px;
     padding: 10px;    
     vertical-align: middle;
 }
-ul.edit_items li:hover{
+div.edit_items ul li:hover{
     background-color: orange;
     color: white;
     transition-duration: 0.3s;
@@ -66,12 +69,7 @@ ul.edit_items li:hover{
     cursor: pointer;
 }
 
-ul.edit_items li.newItemLi:hover{
-    background-color: white;
-    color: white;
-}
-
-ul.edit_items li span{
+div.edit_items ul li span{
     width: 90%;
     font-size: 28px;   
     font-weight: 600;
@@ -81,7 +79,7 @@ ul.edit_items li span{
     text-overflow: ellipsis;
 }
 
-ul.edit_items li a.deleteAction {    
+div.edit_items ul a.deleteAction {    
     float: right;
     color: white !important;
     vertical-align: middle;
