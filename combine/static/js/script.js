@@ -107,8 +107,21 @@ function addItem(item) {
 }
 
 function checksubmit(event) {
+
   if (event.key === "Enter") {
     submitItem(inputField);
+  } else if (event.key === "Escape") {
+    cancelsubmit()
+  }
+}
+
+function cancelsubmit() {
+  fields = document.getElementsByClassName("newItem")
+  for (var i=0; i<fields.length; i++) {
+    f = fields[i];
+    f.value=""
+    f.style.display = "None";
+    f.parentNode.getElementsByClassName("addItem")[0].style.display = "inline-block";
   }
 }
 

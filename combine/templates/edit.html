@@ -25,7 +25,7 @@
             </ul>
             <div class="newItemField">
                 <a class="addItem" onclick="addItem(this)">+</a>
-                <input type="text" class= "newItem" id="{{ p.partId }}" onkeyup="checksubmit(event)"/>
+                <input type="text" class= "newItem" id="{{ p.partId }}" onkeyup="checksubmit(event)" onfocusout="cancelsubmit()"/>
             </div>
         </div>
         {% endfor %}
