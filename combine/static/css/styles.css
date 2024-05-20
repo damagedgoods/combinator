@@ -97,15 +97,20 @@ i.deleteIcon {
     vertical-align: middle;    
 }
 
+div.newItemField {
+    padding: 0 0 0 10px;
+}
+
 a.addItem {
     font-size: 28px;
     font-weight: 600;
     line-height: 38px;
+    cursor: pointer; 
 }
 
 input.newItem {
     display: none;
-    width: 100%;
+    width: 90%;
     font-size: 28px;
     line-height: 48px;
     font-weight: 600;
