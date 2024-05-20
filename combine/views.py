@@ -114,11 +114,8 @@ def newItemJSON(request):
     i = Item(value=value, part=p)
     i.save()
 
-    # Recorrer todos los parámetros
-    for clave, valor in request.POST.items():
-        print(f"Clave: {clave}, Valor: {valor}")
-
     # Return response
     data = {}
     data["message"] = "OK"
+    data["id"] = i.pk
     return JsonResponse(data, safe=False)

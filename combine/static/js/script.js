@@ -114,7 +114,6 @@ function checksubmit(event) {
 
 function submitItem(item) {
 
-  // Send item to server, including Part ID and new value
   fetch("/combine/data/item/new/", {
     method: "POST",
     headers: {
@@ -126,20 +125,22 @@ function submitItem(item) {
       "value": item.value,
     })
   })
-  .catch(error => console.error('Error:', error));
+  .then(response => response.json())
+  .then(data => {
+    if (data.message == "OK") {
+      // If response is OK, get the ID and add the element to the list
+      var newNode = document.createElement("li")
+      newNode.innerHTML = "<span>"+item.value+"</span><a href='#'' id="+data.id+" onclick='deleteItem(this)'' class='deleteAction'><i class='deleteIcon'></i></a>"
+      item.parentNode.parentNode.appendChild(newNode);
 
-  newId = "999";
-  newName = item.value;
+      // Enable next submit by showing again the +
+      item.value = "";
+      item.style.display = "None";
+      item.parentNode.getElementsByClassName("addItem")[0].style.display = "inline-block";
+    }
+  })
+  .catch(error => console.error('Error:', error))
 
-  // If response is OK, get the ID and add the element to the list
-  var newNode = document.createElement("li")
-  newNode.innerHTML = "<span>"+newName+"</span><a href='#'' id="+newId+" onclick='deleteItem(this)'' class='deleteAction'><i class='deleteIcon'></i></a>"
-  item.parentNode.parentNode.appendChild(newNode);
-
-  // Enable next submit by showing again the +
-  item.value = "";
-  item.style.display = "None";
-  item.parentNode.getElementsByClassName("addItem")[0].style.display = "inline-block";
 }
 
 var csrfcookie = function() {
