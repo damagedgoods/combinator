@@ -74,16 +74,15 @@ def edit(request, collection_id):
     c = Collection.objects.get(pk=collection_id)
 
     ## Obtengo los items disponibles para cada part
-    items = []
+    data = []
     parts = Part.objects.filter(collection=c)
     for p in parts:
-        items.append(Item.objects.filter(part=p))    
-    print(items)
+        data.append({"partId": p.pk, "partName": p.name, "items": Item.objects.filter(part=p)})
 
     context = {
         "collection": c,
         "collection_name": c.name,
-        "items": items
+        "data": data,
         }
     return HttpResponse(template.render(context, request))
 
@@ -105,7 +104,15 @@ def deleteItemJSON(request, item_id):
     return JsonResponse(data, safe=False)
 
 def newItemJSON(request):    
+
     # Extract values and create new element
+    body = json.loads(request.body)
+    partId = body['part']
+    value = body['value']
+
+    p = Part.objects.get(pk=partId)
+    i = Item(value=value, part=p)
+    i.save()
 
     # Recorrer todos los parámetros
     for clave, valor in request.POST.items():

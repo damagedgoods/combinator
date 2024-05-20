@@ -113,8 +113,6 @@ function checksubmit(event) {
 }
 
 function submitItem(item) {
-  console.log("Submitting item");
-  console.log(item.value)
 
   // Send item to server, including Part ID and new value
   fetch("/combine/data/item/new/", {
@@ -124,8 +122,8 @@ function submitItem(item) {
       "X-CSRFToken": csrfcookie(),
     },
     body: JSON.stringify({
-      part: "10000",
-      value: "POOOOO",
+      "part": item.id,
+      "value": item.value,
     })
   })
   .catch(error => console.error('Error:', error));
