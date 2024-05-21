@@ -20,7 +20,7 @@
         <div class="edit_items">
             <ul>
                 {% for it in p.items %}
-				<li><span>{{ it.value }}</span><a href="#" id={{it.id}} onclick="deleteItem(this)" class="deleteAction"><i class="deleteIcon"></i></a></li>
+				<li><span>{{ it.value }}</span><a id={{it.id}} onclick="deleteItem(this)" class="deleteAction"><i class="deleteIcon"></i></a></li>
 			    {% endfor %}
             </ul>
             <div class="newItemField">

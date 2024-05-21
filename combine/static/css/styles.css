@@ -110,6 +110,7 @@ a.addItem {
 
 input.newItem {
     display: none;
+    margin: 0;
     width: 90%;
     font-size: 28px;
     line-height: 48px;
