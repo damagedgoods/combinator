@@ -37,24 +37,11 @@ function load(id) {
 
 const run = async () => {
 
-  //console.log("Entrando en run");
   var items = document.getElementsByClassName('item');
-  //console.log(items);
-
-  // Los hago todos invisibles
   for (i=0; i< items.length; i++) {
     el = items[i];
     el.style.opacity = 0;
-    //console.log(i+" invisible")
   }
-
-  // sleep(400).then(() => {
-  //   for (k in keys) {
-  //     items = data[keys[k]];
-  //     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
-  //     document.getElementById(keys[k]).style.opacity = 1;
-  //   }      
-  // })
 
   for (k in keys) {
     await sleep(200)
