@@ -9,11 +9,9 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 function load(id) {
 
-  console.log("I'm gonna call");
   fetch('../../data/collection/'+id)
   .then(response => response.json())
   .then(rdata => {
-    console.log("Tengo respuesta");
     data = rdata;
     list = document.getElementById('items');
     list.innerHTML = '';
@@ -46,7 +44,6 @@ const run = async () => {
   for (k in keys) {
     await sleep(200)
     items = data[keys[k]];
-    console.log("key: "+k+", "+keys[k]+", data "+data[keys[k]]);
     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
     document.getElementById(keys[k]).style.opacity = 1;
     
