@@ -127,6 +127,11 @@ function cancelsubmit() {
 
 function submitItem(item) {
 
+  if (item.value.trim() == "") {
+    cancelsubmit();
+    return;
+  }
+
   fetch("/combine/data/item/new/", {
     method: "POST",
     headers: {
