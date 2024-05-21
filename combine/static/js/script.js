@@ -1,15 +1,19 @@
 
 var data, keys;
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 function load(id) {
 
+  console.log("I'm gonna call");
   fetch('../../data/collection/'+id)
   .then(response => response.json())
   .then(rdata => {
+    console.log("Tengo respuesta");
     data = rdata;
     list = document.getElementById('items');
     list.innerHTML = '';
@@ -31,22 +35,35 @@ function load(id) {
   });
 }
 
-function run() {
+const run = async () => {
 
+  //console.log("Entrando en run");
   var items = document.getElementsByClassName('item');
+  //console.log(items);
+
+  // Los hago todos invisibles
   for (i=0; i< items.length; i++) {
-    el = items[i];    
+    el = items[i];
     el.style.opacity = 0;
+    //console.log(i+" invisible")
   }
 
-  sleep(400).then(() => {
-    for (k in keys) {
-      items = data[keys[k]];
-      document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
-      document.getElementById(keys[k]).style.opacity = 1;
-    }      
-  })
+  // sleep(400).then(() => {
+  //   for (k in keys) {
+  //     items = data[keys[k]];
+  //     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
+  //     document.getElementById(keys[k]).style.opacity = 1;
+  //   }      
+  // })
 
+  for (k in keys) {
+    await sleep(200)
+    items = data[keys[k]];
+    console.log("key: "+k+", "+keys[k]+", data "+data[keys[k]]);
+    document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
+    document.getElementById(keys[k]).style.opacity = 1;
+    
+  }      
 }
 
 function randomNumber(min, max) {
