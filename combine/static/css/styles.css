@@ -97,6 +97,22 @@ i.deleteIcon {
     vertical-align: middle;    
 }
 
+i.editIcon {
+    color: orange;
+    fill: orange;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('../img/ico_edit.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;    
+}
+
+i.editIcon:hover {
+    filter: invert(84%) sepia(35%) saturate(7495%) hue-rotate(357deg) brightness(103%) contrast(108%);
+}
+
 div.newItemField {
     padding: 0 0 0 10px;
 }
@@ -140,6 +156,7 @@ div#share-url {
 
 a:hover {
     color: orange;
+    fill: orange;
 }
 
 #collection-selector{	
