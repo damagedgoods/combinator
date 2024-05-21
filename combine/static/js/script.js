@@ -40,9 +40,11 @@ const run = async () => {
     el = items[i];
     el.style.opacity = 0;
   }
+  
+  await sleep(300)
 
   for (k in keys) {
-    await sleep(200)
+    await sleep(100)
     items = data[keys[k]];
     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
     document.getElementById(keys[k]).style.opacity = 1;
@@ -69,7 +71,6 @@ function changeCollection() {
 
 function toggleShare() {
   var item = document.getElementById("share-url");
-  console.log(item);
   if (item.style.opacity != "1") {
     item.style.opacity = "1";
   } else {
