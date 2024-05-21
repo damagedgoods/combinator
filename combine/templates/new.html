@@ -15,12 +15,13 @@
 	<div id="main">
 		<a href="../..">&larr; Back</a>				
 
-		<form class="new" action="../create/" method="post" enctype="multipart/form-data">
+		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
 			<label>Collection name</label>
 			<span class="explanation">How would you call this random generator?</span>
 			<input type="" id="name" name="name"/>
+			<span id="nameError" class="error"></span>
 
 			<label>Password</label>
 			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
@@ -32,6 +33,26 @@
 
 			<input type="submit" value="&rarr;"></input>
 		</form>
+
+		<script>
+			document.getElementById('newCollectionForm').addEventListener('submit', function(event) {
+				event.preventDefault();
+	
+				let name = document.getElementById('name').value;
+				let password = document.getElementById('password').value;
+				let csv = document.getElementById('csv').value;
+				let valid = true;
+	
+				if (name.trim() === '') {
+					document.getElementById('nameError').textContent = 'Name is mandatory';
+					valid = false;
+				}
+	
+				if (valid) {
+					this.submit();
+				}
+			});
+		</script>		
 
 	</div>
 

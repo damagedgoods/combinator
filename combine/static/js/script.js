@@ -176,3 +176,9 @@ var csrfcookie = function() {
   }
   return cookieValue;
 };
+
+function validateNewCollection(event) {
+  event.preventDefault()
+  console.log("Validating");
+  return false;
+}
