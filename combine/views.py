@@ -12,7 +12,7 @@ import json
 
 def index(request):    
     template = loader.get_template("index.html")
-    collections = Collection.objects.all()
+    collections = Collection.objects.filter(highlighted=True)
     context = {
         "collections": collections
     }
