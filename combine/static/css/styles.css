@@ -131,9 +131,14 @@ div.edit_items ul li span{
     text-overflow: ellipsis;
 }
 
+div.edit_items ul li span abbr{
+    font-weight: 600;
+    text-decoration: none;
+}
+
 div.edit_items ul a.deleteAction {    
     float: right;
-    color: white !important;
+    color: #f8f6f4 !important;
     vertical-align: middle;
 }
 
@@ -144,7 +149,8 @@ i.deleteIcon {
     background-image: url('../img/ico_trash.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    vertical-align: middle;    
+    vertical-align: middle;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(32%) saturate(492%) hue-rotate(293deg) brightness(104%) contrast(94%);
 }
 
 div.newItemField {
@@ -318,4 +324,14 @@ label {
 
 input {
     clear: both;
+}
+
+a.bigLink {
+    font-size: 64px;
+    font-weight: 300;
+    text-decoration: none;
+    clear: both;
+    display: block;
+    margin: 32px 0;
+    cursor: pointer; 
 }
