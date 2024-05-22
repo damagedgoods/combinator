@@ -56,24 +56,24 @@ def create(request):
                 newItem.save()
                 pos += 1
 
-    return redirect("collection", collection_id=c.id)
+    return redirect("collection", slug=c.slug)
 
-def collection(request, collection_id):
+def collection(request, slug):
     template = loader.get_template("collection.html")
     collections = Collection.objects.all()
-    c = Collection.objects.get(pk=collection_id)
+    c = Collection.objects.get(slug=slug)
     context = {
         "collections": collections,
-        "id": collection_id,
+        "id": c.id,
+        "slug": slug,
         "collection_name": c.name
         }
     return HttpResponse(template.render(context, request))
 
-def edit(request, collection_id):
+def edit(request, slug):
     template = loader.get_template("edit.html")
-    c = Collection.objects.get(pk=collection_id)
+    c = Collection.objects.get(slug=slug)
 
-    ## Obtengo los items disponibles para cada part
     data = []
     parts = Part.objects.filter(collection=c)
     for p in parts:
