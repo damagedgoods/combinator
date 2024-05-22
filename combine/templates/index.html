@@ -14,13 +14,21 @@
 <body>
 
 	<div id="main">
-		<ul id="collections_list">
-			{% for c in collections %}
-				<li><a href="./collection/{{ c.id }}">{{ c.name }} &rarr;</a></li>
-			{% endfor %}			
-			<li><a href="./collection/new">Create a new one... &rarr;</a></li>
-		</ul>
-		
+		<div id="left">
+			<p>This is MixMaster.</p>
+			<p>It mixes existing things to build new concepts.</p>
+			<div class="small">A product by <a href="#">AvantiTutti</a>.</div>
+		</div>
+		<div id="right">
+			<ul id="collections_list">
+				{% for c in collections %}
+					<li><a href="./collection/{{ c.id }}">{{ c.name }} &rarr;</a></li>
+				{% endfor %}	
+				<li></li>
+				<li><a href="./collection/new">New &rarr;</a> </li>
+			</ul>
+		</div>
+
 	</div>	
 
 </body>

@@ -27,21 +27,39 @@ body {
 }
 
 #main {	
-    margin: 5%;
+    margin: 64px;
 	text-align: left;
 	padding: 0;
     width: 90%;
 }
 
-ul#actions {
+#footer {
+    position: absolute;
+    bottom: 64px;
+    right: 64px;
+}
+
+div#left {
+    width: 50%;
+    float: left;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 80px;
+    text-overflow: ellipsis;
+}
+
+div#left p {
+    margin: 0 0 80px 0;
+}
+
+div#right{
+    width: 50%;
     float: right;
 }
 
-ul#actions li {
-    display: block;
-    float: left;
-    margin: 0 0 0 20px;
-    letter-spacing: 0em;
+div.small {
+    font-size: 18px;
+    line-height: 80px;
 }
 
 div.edit_items {
@@ -97,22 +115,6 @@ i.deleteIcon {
     vertical-align: middle;    
 }
 
-i.editIcon {
-    color: orange;
-    fill: orange;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-image: url('../img/ico_edit.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;    
-}
-
-i.editIcon:hover {
-    filter: invert(84%) sepia(35%) saturate(7495%) hue-rotate(357deg) brightness(103%) contrast(108%);
-}
-
 div.newItemField {
     padding: 0 0 0 10px;
 }
@@ -137,21 +139,9 @@ input.newItem {
 
 a {
 	font-size: 16px;
-	text-decoration: none;
 	color: #111;
 	display: inline-block;	
     transition: color 0.2s ease;
-}
-
-a#share-action {
-    }
-
-div#share-url {
-    position: absolute;
-    right: 140px;
-    top: 64px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
 }
 
 a:hover {
@@ -159,9 +149,6 @@ a:hover {
     fill: orange;
 }
 
-#collection-selector{	
-	display: inline-block;
-}
 
 
 ul {
@@ -179,6 +166,8 @@ ul#collections_list li{
 ul#collections_list li a{
     font-size: 64px;
     font-weight: 800;
+    line-height: 80px;
+    text-decoration: none;
 }
 
 ul#items{
