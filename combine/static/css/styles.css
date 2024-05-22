@@ -5,6 +5,7 @@
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;	    
+    
 }
 
 ul li {
@@ -17,7 +18,7 @@ ul li {
 }
 
 body {
-	background-color: #ffffff;
+	background-color: rgb(248, 246, 244);
 	transition: background-color 0.1s ease; /* Animación de transición para el cambio de color */	
 }
 
