@@ -180,7 +180,58 @@ var csrfcookie = function() {
 };
 
 function validateNewCollection(event) {
-  event.preventDefault()
-  console.log("Validating");
-  return false;
+  event.preventDefault();
+  let name = document.getElementById('name').value;
+  let password = document.getElementById('password').value;
+  let csv = document.getElementById('csv').value;
+  let valid = true;
+
+  if (name.trim() === '') {
+    document.getElementById('nameError').textContent = 'is mandatory';
+    valid = false;
+  }
+
+  if (csv === '') {
+    document.getElementById('csvError').textContent = 'is mandatory';
+    console.log("No hay fichero");
+    valid = false;
+  }
+
+  return valid;
 }
+
+function validateName() {
+  let name = document.getElementById('name').value;
+  let valid = true;
+  if (name.trim() === '') {
+    document.getElementById('nameError').textContent = 'is mandatory';
+    valid = false;
+  } else {
+    document.getElementById('nameError').textContent = '';
+    valid = true;
+  }
+  return valid;
+}
+
+function validateFile() {
+  let csv = document.getElementById('csv').value;
+  let valid = true;
+  if (csv.trim() === '') {
+    document.getElementById('csvError').textContent = 'is mandatory';
+    valid = false;
+  } else {
+    document.getElementById('csvError').textContent = '';
+    valid = true;
+  }
+  return valid;
+}
+
+function submitNewCollection(event) {
+  if (validateNewCollection(event)) {
+    this.submit();
+  }
+
+}
+
+
+

@@ -284,3 +284,16 @@ input[type=submit]:hover {
     background-color: orange;
     transform: rotate(90deg);
 }
+
+label {
+    
+}
+
+.error {
+    display: inline-block;
+    color: orange;
+}
+
+input {
+    clear: both;
+}

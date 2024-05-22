@@ -5,6 +5,7 @@
 <head>
 	<meta charset="UTF-8">
     <title>Scenomatic</title>
+    <script src="{% static 'js/script.js' %}" charset="utf-8"></script>	
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,16 +19,16 @@
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
-			<label>Collection name</label>
+			<label>Collection name <span id="nameError" class="error"></span></label>
 			<span class="explanation">How would you call this random generator?</span>
 			<input type="" id="name" name="name"/>
-			<span id="nameError" class="error"></span>
+			
 
 			<label>Password</label>
 			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
 			<input type="password" id="password" name="password"/>
 
-			<label>Values</label>
+			<label>Values <span id="csvError" class="error"></span></label>
 			<span class="explanation">Drag & drop an excel or CSV file with your values. We will create a category for each column</span>
 			<input type="file" id="csv" name="csv"/>
 
@@ -35,23 +36,10 @@
 		</form>
 
 		<script>
-			document.getElementById('newCollectionForm').addEventListener('submit', function(event) {
-				event.preventDefault();
-	
-				let name = document.getElementById('name').value;
-				let password = document.getElementById('password').value;
-				let csv = document.getElementById('csv').value;
-				let valid = true;
-	
-				if (name.trim() === '') {
-					document.getElementById('nameError').textContent = 'Name is mandatory';
-					valid = false;
-				}
-	
-				if (valid) {
-					this.submit();
-				}
-			});
+			document.getElementById('newCollectionForm').addEventListener('submit', submitNewCollection);
+			document.getElementById('name').addEventListener('input', validateName);
+			document.getElementById('csv').addEventListener('input', validateFile);
+
 		</script>		
 
 	</div>
