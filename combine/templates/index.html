@@ -15,9 +15,10 @@
 
 	<div id="main">
 		<div id="left">
-			<p>This is MixMaster.</p>
-			<p>It mixes existing things to build new concepts.</p>
-			<div class="small">A product by <a href="#">AvantiTutti</a>.</div>
+			<p>Hello there. I'm the MixMaster.</p>
+			<p>I remix existing concepts to build new ideas.</p>
+			<p><a href="./collection/new">Try me &rarr;</a></p>
+			<p id="avanti">A product by <a href="#">AvantiTutti</a>.</p>
 		</div>
 		<div id="right">
 			<ul id="collections_list">
@@ -25,7 +26,6 @@
 					<li><a href="./collection/{{ c.id }}">{{ c.name }} &rarr;</a></li>
 				{% endfor %}	
 				<li></li>
-				<li><a href="./collection/new">New &rarr;</a> </li>
 			</ul>
 		</div>
 

@@ -33,29 +33,60 @@ body {
     width: 90%;
 }
 
+#main #left {
+    width: 40%;
+    float: left;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 80px;
+    text-overflow: ellipsis;
+    position: fixed;
+    height: 100%
+}
+
+#main #left p {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    margin: 0 0 64px 0;
+}
+
+#main #left p a {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    text-decoration: none;
+}
+
+#main #left #avanti {
+    position: absolute;
+    bottom: 64px;
+    font-size: 18px;
+}
+
+#main #left #avanti a {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+#main #right{
+    width: 50%;
+    float: right;
+}
+
+#main #right ul li a {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 64px;
+    text-decoration: none;
+}
+
 #footer {
     position: absolute;
     bottom: 64px;
     right: 64px;
 }
 
-div#left {
-    width: 50%;
-    float: left;
-    font-size: 64px;
-    font-weight: 800;
-    line-height: 80px;
-    text-overflow: ellipsis;
-}
-
-div#left p {
-    margin: 0 0 80px 0;
-}
-
-div#right{
-    width: 50%;
-    float: right;
-}
 
 div.small {
     font-size: 18px;
@@ -158,16 +189,6 @@ ul {
 ul#collections {
 	margin: 0 0 0 32px;
     display: inline-block;
-}
-
-ul#collections_list li{
-    height: 80px;
-}
-ul#collections_list li a{
-    font-size: 64px;
-    font-weight: 800;
-    line-height: 80px;
-    text-decoration: none;
 }
 
 ul#items{
