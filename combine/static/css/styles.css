@@ -35,7 +35,7 @@ body {
 }
 
 #main #left {
-    width: 40%;
+    width: 45%;
     float: left;
     font-size: 64px;
     font-weight: 800;
@@ -71,7 +71,7 @@ body {
 }
 
 #main #right{
-    width: 50%;
+    width: 30%;
     float: right;
 }
 
