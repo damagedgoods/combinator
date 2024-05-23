@@ -19,6 +19,7 @@
         {% for p in data %}
         <div class="edit_items">
             <ul>
+                <li class="partNumber"> {{ forloop.counter }}</li>
                 {% for it in p.items %}
 				<li><span><abbr title="{{ it.value }}">{{ it.value }}</abbr></span><a id={{it.id}} onclick="deleteItem(this)" class="deleteAction" alt="BLAH"><i class="deleteIcon"></i></a></li>
 			    {% endfor %}

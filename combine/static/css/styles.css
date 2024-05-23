@@ -96,8 +96,8 @@ div.small {
 
 div.edit_items {
     display: block;
-    width: 30%;
-    float: left;    
+    width: 33%;
+    float: left;
 }
 
 ul.edit_items {
@@ -112,6 +112,7 @@ div.edit_items ul li{
     display : flex;
     align-items : center;
 }
+
 div.edit_items ul li:hover{
     background-color: orange;
     color: white;
@@ -119,6 +120,18 @@ div.edit_items ul li:hover{
     transition-property: background-color, color;
     transition-timing-function: ease-in-out;
     cursor: pointer;
+}
+
+div.edit_items ul li.partNumber {
+    font-size: 80px;
+    font-weight: 300;   
+    margin: 0 0 32px 0;
+}
+
+div.edit_items ul li.partNumber:hover{
+    background-color: transparent;
+    color: black;
+    cursor:default;
 }
 
 div.edit_items ul li span{
