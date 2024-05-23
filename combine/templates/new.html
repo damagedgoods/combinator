@@ -14,7 +14,7 @@
 
 <body>
 	<div id="main">
-		<a href="../..">&larr; Back</a>				
+		<a class="bigLink" href="../..">&larr;</a>		
 
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
@@ -28,7 +28,7 @@
 			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
 			<input type="password" id="password" name="password"/>
 
-			<label>Values <span id="csvError" class="error"></span></label>
+			<label for="file-upload" class="custom-file-upload">Values <span id="csvError" class="error"></span></label>
 			<span class="explanation">Drag & drop an excel or CSV file with your values. We will create a category for each column</span>
 			<input type="file" id="csv" name="csv"/>
 

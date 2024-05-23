@@ -27,34 +27,35 @@ def new(request):
 def create(request):
     name = request.POST.get('name')
     password = request.POST.get('password')
-    # print(str(name)+" - "+str(password))
     c = Collection(name=name)
     c.save()
     
-    content = request.FILES['csv'].read().decode('utf-8')
+    if request.FILES:
+        content = request.FILES['csv'].read().decode('utf-8')
+        print("CONTENT: "+content)
 
-    # Process the first one to know number of columns and create Parts
-    firstLine = content.partition('\n')[0]
-    columns = firstLine.strip().split(';')
-    parts = []
-    pos = 0
-    for column in columns:
-        pos += 1
-        if len(column) > 0:
-            newPart = Part(name="part"+str(pos), collection=c)
-            newPart.save()
-            parts.append(newPart)
-
-    # Then process the rest of lines to create Items
-    for row in content.splitlines():
-        newValues = row.strip().split(';')        
+        # Process the first one to know number of columns and create Parts
+        firstLine = content.partition('\n')[0]
+        columns = firstLine.strip().split(';')
+        parts = []
         pos = 0
-        for v in newValues:
-            if len(v) > 0:
-                part = parts[pos]            
-                newItem = Item(value=v, part=part)
-                newItem.save()
-                pos += 1
+        for column in columns:
+            pos += 1
+            if len(column) > 0:
+                newPart = Part(name="part"+str(pos), collection=c)
+                newPart.save()
+                parts.append(newPart)
+
+        # Then process the rest of lines to create Items
+        for row in content.splitlines():
+            newValues = row.strip().split(';')        
+            pos = 0
+            for v in newValues:
+                if len(v) > 0:
+                    part = parts[pos]            
+                    newItem = Item(value=v, part=part)
+                    newItem.save()
+                    pos += 1
 
     return redirect("collection", slug=c.slug)
 

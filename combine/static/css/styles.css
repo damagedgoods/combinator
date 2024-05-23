@@ -263,7 +263,7 @@ form {
 label {
     display: block;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
     margin: 32px 0 0 0;
 }
 
@@ -277,13 +277,15 @@ span.explanation {
 input {
     margin: 16px 0 0 0;
     border: none;
-    border-bottom: 2px solid #111;
+    border-bottom: 3px solid #111;
     font-size: 48px;
     font-weight: 400;
+    background-color: transparent;
 }
 
 input:focus{
     outline: none;
+    border-bottom: 3px solid orange;
 }
 
 input[type=submit] {
@@ -335,3 +337,15 @@ a.bigLink {
     margin: 32px 0;
     cursor: pointer; 
 }
+
+
+input[type="file"] {
+    display: none;
+  }
+  
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
