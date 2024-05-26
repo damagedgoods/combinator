@@ -59,17 +59,6 @@ body {
     text-decoration: none;
 }
 
-#main #left #avanti {
-    position: absolute;
-    bottom: 64px;
-    font-size: 18px;
-}
-
-#main #left #avanti a {
-    font-size: 18px;
-    text-decoration: underline;
-}
-
 #main #right{
     width: 30%;
     float: right;
@@ -87,7 +76,6 @@ body {
     bottom: 64px;
     right: 64px;
 }
-
 
 div.small {
     font-size: 18px;
@@ -363,7 +351,33 @@ input[type="file"] {
     cursor: pointer;
   }
 
-
 span.intensify {
     font-weight: 800;
+}
+
+#cta {
+    position: relative;
+}
+
+#cta a {
+    position: relative;
+}
+
+#glow {
+    position: absolute;
+    top: -60px;
+    left: -30px;
+    z-index: -1;
+    width: 300px;
+}
+
+#main #left #avanti {
+    /* position: absolute;
+    bottom: 64px;*/
+    font-size: 18px;
+}
+
+#main #left #avanti a {
+    font-size: 18px;
+    text-decoration: underline;
 }
