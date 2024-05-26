@@ -29,10 +29,9 @@ def create(request):
     password = request.POST.get('password')
     c = Collection(name=name)
     c.save()
-    
+
     if request.FILES:
-        content = request.FILES['csv'].read().decode('utf-8')
-        print("CONTENT: "+content)
+        content = request.FILES['fileInput'].read().decode('utf-8')
 
         # Process the first one to know number of columns and create Parts
         firstLine = content.partition('\n')[0]

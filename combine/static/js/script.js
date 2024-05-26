@@ -183,7 +183,7 @@ function validateNewCollection(event) {
   event.preventDefault();
   let name = document.getElementById('name').value;
   let password = document.getElementById('password').value;
-  let csv = document.getElementById('csv').value;
+  let fileInput = document.getElementById('fileInput').value;
   let valid = true;
 
   if (name.trim() === '') {
@@ -191,9 +191,8 @@ function validateNewCollection(event) {
     valid = false;
   }
 
-  if (csv === '') {
-    document.getElementById('csvError').textContent = 'is mandatory';
-    console.log("No hay fichero");
+  if (fileInput === '') {
+    document.getElementById('fileError').textContent = 'is mandatory';
     valid = false;
   }
 
@@ -214,19 +213,20 @@ function validateName() {
 }
 
 function validateFile() {
-  let csv = document.getElementById('csv').value;
+  let fileValue = document.getElementById('fileInput').value;
   let valid = true;
-  if (csv.trim() === '') {
-    document.getElementById('csvError').textContent = 'is mandatory';
+  if (fileValue.trim() === '') {
+    document.getElementById('fileError').textContent = 'is mandatory';
     valid = false;
   } else {
-    document.getElementById('csvError').textContent = '';
+    document.getElementById('fileError').textContent = '';
     valid = true;
   }
   return valid;
 }
 
 function submitNewCollection(event) {
+
   if (validateNewCollection(event)) {
     this.submit();
   }
@@ -236,7 +236,7 @@ function updateFileName() {
   const input = document.getElementById('fileInput');
   const fileNameDisplay = document.getElementById('fileName');
   
-  if (input.files.length > 0) {
+  if (input.files.length > 0) {    
     fileNameDisplay.textContent = input.files[0].name;
   } else {
     fileNameDisplay.textContent = 'No file chosen';

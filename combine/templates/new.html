@@ -21,27 +21,31 @@
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
-			<label>Select a set name <span id="nameError" class="error"></span></label>
+			<label>Set name <span id="nameError" class="error"></span></label>
 			<span class="explanation">How would you call this random generator?</span>
 			<input type="text" id="name" name="name"/>
 			
 
-			<label>Choose a password, if you want</label>
+			<label>Password, if you want one</label>
 			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
 			<input type="password" id="password" name="password"/>
 
-			<label for="file">Upload your CSV file with all possible values <span id="csvError" class="error"></span></label>
-			<span class="explanation">Drag & drop an excel or CSV file with your values. We will create a category for each column</span>
-			<input type="file" id="csv" name="csv"/>
+			<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
+			<label for="file">CSV file with all your possible values <span id="fileError" class="error"></span></label>
+			<button class="upload-button" onclick="document.getElementById('fileInput').click()">Choose File</button>
+			<span id="fileName" class="file-name">No file chosen</span>		 
+			
+			<p id="cta">
+				<img id="glow" src="../../../static/img/glow.png"/>
+				<input type="submit" value="Submit &rarr;"></input>
+			</p>			
 
-			<input type="submit" value="&rarr;"></input>
 		</form>
 
 		<script>
 			document.getElementById('newCollectionForm').addEventListener('submit', submitNewCollection);
 			document.getElementById('name').addEventListener('input', validateName);
-			document.getElementById('csv').addEventListener('input', validateFile);
-
+			document.getElementById('fileInput').addEventListener('input', validateFile);
 		</script>		
 
 	</div>

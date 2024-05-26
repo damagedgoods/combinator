@@ -222,7 +222,7 @@ ul#collections li {
     transition-delay: calc(var(--n)*0.1s);
 }
 
-button {
+button.reload {
 	position: absolute;
 	left: 64px;
 	bottom: 64px;
@@ -245,12 +245,12 @@ button {
     transition-timing-function: ease-in-out;
 }
 
-button:hover {
+button.reload:hover {
     background-color: orange;
     transform: rotate(90deg);
 }
 
-button:active {
+button.reload:active {
     transform: translateY(2px);
     transform: rotate(90deg);
 }
@@ -283,12 +283,12 @@ input[type=text], input[type=password] {
     background-color: transparent;
 }
 
-input[type=text]:focus{
+input[type=text]:focus, input[type=password]:focus{
     outline: none;
     border-bottom: 3px solid orange;
 }
 
-input[type=submit] {
+/* input[type=submit] {
     display: block;
     margin: 48px 0 0 0;
 	background-color: black;
@@ -311,6 +311,22 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: orange;
+} */
+
+input[type=submit] {
+    display: block;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    text-decoration: none;
+    border: none;
+    background: none;
+    margin: 64px 0 0 0; 
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    color: orange;
 }
 
 label {
@@ -332,7 +348,7 @@ a.bigLink {
     cursor: pointer; 
 }
 
-input[type="file"]::file-selector-button {
+/* input[type="file"]::file-selector-button {
     border-radius: 64px;
     padding: 16px;
     cursor: pointer;
@@ -352,7 +368,7 @@ input[type="file"]::file-selector-button:hover {
 
 input[type="file"]::file-selector-button:active {
     background-color: #e5e7eb;
-}
+} */
   
 span.intensify {
     font-weight: 800;
@@ -388,3 +404,56 @@ p.title {
     font-weight: 400;
     width: 60%;
 }
+
+.file-input {
+    display: none;
+  }
+  
+  .upload-button {
+    cursor: pointer;
+    border-radius: 64px;
+    padding: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #111;
+    border: 3px solid #111;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin: 24px 24px 0 0;
+    transition: background-color 200ms;
+    font-size: 18px;
+  }
+  
+  .upload-button:hover {
+    background-color: orange;
+    border: 3px solid orange;
+    color: white;
+  }
+  
+  .file-name {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+
+  /* input[type="file"]::file-selector-button {
+    border-radius: 64px;
+    padding: 16px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid #111;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin: 24px 24px 0 0;
+    transition: background-color 200ms;
+    font-size: 18px;
+}
+  
+input[type="file"]::file-selector-button:hover {
+    background-color: orange;
+    border: 3px solid orange;
+    color: white;
+}
+
+input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+} */
