@@ -16,19 +16,21 @@
 	<div id="main">
 		<a class="bigLink" href="../..">&larr;</a>		
 
+		<p class="title">Ok, let's create a new MixMaster set.</p>
+
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
-			<label>Collection name <span id="nameError" class="error"></span></label>
+			<label>Select a set name <span id="nameError" class="error"></span></label>
 			<span class="explanation">How would you call this random generator?</span>
-			<input type="" id="name" name="name"/>
+			<input type="text" id="name" name="name"/>
 			
 
-			<label>Password</label>
+			<label>Choose a password, if you want</label>
 			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
 			<input type="password" id="password" name="password"/>
 
-			<label for="file-upload" class="custom-file-upload">Values <span id="csvError" class="error"></span></label>
+			<label for="file">Upload your CSV file with all possible values <span id="csvError" class="error"></span></label>
 			<span class="explanation">Drag & drop an excel or CSV file with your values. We will create a category for each column</span>
 			<input type="file" id="csv" name="csv"/>
 

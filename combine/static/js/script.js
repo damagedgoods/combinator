@@ -230,7 +230,17 @@ function submitNewCollection(event) {
   if (validateNewCollection(event)) {
     this.submit();
   }
+}
 
+function updateFileName() {
+  const input = document.getElementById('fileInput');
+  const fileNameDisplay = document.getElementById('fileName');
+  
+  if (input.files.length > 0) {
+    fileNameDisplay.textContent = input.files[0].name;
+  } else {
+    fileNameDisplay.textContent = 'No file chosen';
+  }
 }
 
 
