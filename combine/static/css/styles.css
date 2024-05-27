@@ -376,13 +376,13 @@ input[type=text]:focus, input[type=password]:focus{
 
 input[type=submit] {
     display: block;
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 400;
     line-height: 64px;
     text-decoration: none;
     border: none;
     background: none;
-    margin: 64px 0 0 0; 
+    margin: 96px 0 0 0; 
     cursor: pointer;
 }
 
