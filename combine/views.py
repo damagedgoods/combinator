@@ -27,11 +27,21 @@ def new(request):
 def create(request):
     name = request.POST.get('name')
     password = request.POST.get('password')
-    c = Collection(name=name)
-    c.save()
 
     if request.FILES:
-        content = request.FILES['fileInput'].read().decode('utf-8')
+        try:
+            content = request.FILES['fileInput'].read().decode('utf-8')
+        except:
+            print("Error managing the file")
+            template = loader.get_template("new.html")
+            context = {
+                "name": name,
+                "fileError": "The file not valid"
+            }
+            return HttpResponse(template.render(context, request))
+
+        c = Collection(name=name)
+        c.save()
 
         # Process the first one to know number of columns and create Parts
         firstLine = content.partition('\n')[0]
