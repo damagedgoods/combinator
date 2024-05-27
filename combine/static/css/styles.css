@@ -212,18 +212,20 @@ ul#collections {
 ul#items{
 	margin: 32px 0 0 0;
 }
-ul#items li.item{
-    transition: opacity 0.2s ease;
-    transition-delay: calc(var(--n)*0.1s);
-}
 ul#items li {
 	display: block;
 	font-size: 96px;
 	font-weight: 700;
 	color: #111;
-    letter-spacing: -0.02em;
-	
+    letter-spacing: -0.02em;	
 }
+
+ul#items li.item{
+    transition-duration: 0.2s;
+    transition-property: transform, opacity;
+    transition-timing-function: ease-in-out;
+}
+
 ul#collections li {
 	display: inline-block;
 	padding: 0 32px 0 0;
@@ -250,10 +252,9 @@ button.reload {
     font-size: 60px; /* Tamaño de la fuente */
     width: 120px;
     height: 120px;
-    
 
     transition-duration: 0.1s;
-    transition-property: background-color, transform;
+    transition-property: background-color, transform, box-shadow;
     transition-timing-function: ease-in-out;
 }
 
@@ -265,6 +266,7 @@ button.reload:hover {
 
 button.reload:active {
     transform: translateY(5px);
+    box-shadow: 0 0px 4px rgba(0,0,0,0.5);
 }
 
 

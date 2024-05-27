@@ -36,19 +36,16 @@ function load(id) {
 const run = async () => {
 
   var items = document.getElementsByClassName('item');
+
   for (i=0; i< items.length; i++) {
-    el = items[i];
-    el.style.opacity = 0;
+    items[i].style.opacity = 0;
   }
-  
-  await sleep(300)
 
   for (k in keys) {
-    await sleep(100)
+    await sleep(200);
     items = data[keys[k]];
     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
     document.getElementById(keys[k]).style.opacity = 1;
-    
   }      
 }
 
@@ -76,18 +73,6 @@ function toggleShare() {
   } else {
     item.style.opacity = "0";
   }
-}
-
-function copyURL(collection_id) {
-  var item = document.getElementById("share-url-link");
-  navigator.clipboard.writeText("http://damagedgoods.pythonanywhere.com/combine/collection/"+collection_id);
-  item.innerHTML = "Copied!"
-  sleep(1000).then(() => {
-    document.getElementById("share-url").style.opacity = "0";
-    sleep(1000).then(() => {
-      item.innerHTML = "Click to copy URL";
-    }) 
-  })
 }
 
 function deleteItem(item) {
