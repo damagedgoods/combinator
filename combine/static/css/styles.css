@@ -75,6 +75,28 @@ body {
     position: absolute;
     bottom: 64px;
     right: 64px;
+    font-size: 14px; 
+}
+
+#footer a {
+    font-weight: 300;
+    font-size: 14px; 
+}
+
+#footer a:hover {
+    color: orange;
+}
+
+#footer span{
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 10px;
+    border-left: 1px solid #666;
+    font-weight: 300;
+}
+
+#footer span:first-child{
+    border: none;
 }
 
 div.small {
@@ -361,12 +383,19 @@ span.intensify {
 }
 
 #main #left #avanti {
-    font-size: 18px;
+    margin: 96px 0 0 0;
+    font-weight: 300;
+    font-size: 14px; 
 }
 
 #main #left #avanti a {
-    font-size: 18px;
+    font-weight: 300;
+    font-size: 14px; 
     text-decoration: underline;
+}
+
+#main #left #avanti a:hover {
+    color: orange;
 }
 
 p.title {
