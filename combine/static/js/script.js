@@ -187,12 +187,12 @@ function validateNewCollection(event) {
   let valid = true;
 
   if (name.trim() === '') {
-    document.getElementById('nameError').textContent = 'is mandatory';
+    document.getElementById('nameError').textContent = ' is mandatory';
     valid = false;
   }
 
   if (fileInput === '') {
-    document.getElementById('fileError').textContent = 'is mandatory';
+    document.getElementById('fileError').textContent = ' is mandatory';
     valid = false;
   }
 
@@ -203,7 +203,7 @@ function validateName() {
   let name = document.getElementById('name').value;
   let valid = true;
   if (name.trim() === '') {
-    document.getElementById('nameError').textContent = 'is mandatory';
+    document.getElementById('nameError').textContent = ' is mandatory';
     valid = false;
   } else {
     document.getElementById('nameError').textContent = '';
@@ -216,7 +216,7 @@ function validateFile() {
   let fileValue = document.getElementById('fileInput').value;
   let valid = true;
   if (fileValue.trim() === '') {
-    document.getElementById('fileError').textContent = 'is mandatory';
+    document.getElementById('fileError').textContent = ' is mandatory';
     valid = false;
   } else {
     document.getElementById('fileError').textContent = '';
