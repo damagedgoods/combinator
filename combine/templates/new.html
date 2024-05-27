@@ -32,8 +32,7 @@
 
 			<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
 			<label for="file">CSV file with all your possible values <span id="fileError" class="error"></span></label>
-			<button class="upload-button" onclick="document.getElementById('fileInput').click()">Choose File</button>
-			<span id="fileName" class="file-name">No file chosen</span>		 
+			<a class="upload-button" id="upload-button" onclick="document.getElementById('fileInput').click()">No File</a>
 			
 			<input type="submit" value="Submit &rarr;"></input>
 

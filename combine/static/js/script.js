@@ -234,7 +234,7 @@ function submitNewCollection(event) {
 
 function updateFileName() {
   const input = document.getElementById('fileInput');
-  const fileNameDisplay = document.getElementById('fileName');
+  const fileNameDisplay = document.getElementById('upload-button');
   
   if (input.files.length > 0) {    
     fileNameDisplay.textContent = input.files[0].name;

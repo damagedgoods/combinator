@@ -409,25 +409,20 @@ p.title {
     display: none;
   }
   
-  .upload-button {
+.upload-button {
     cursor: pointer;
     border-radius: 64px;
-    padding: 16px;
     cursor: pointer;
     background-color: transparent;
     color: #111;
-    border: 3px solid #111;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
     margin: 24px 24px 0 0;
-    transition: background-color 200ms;
-    font-size: 18px;
-  }
+    font-size: 32px;
+    text-decoration: underline;
+}
   
-  .upload-button:hover {
-    background-color: orange;
-    border: 3px solid orange;
-    color: white;
-  }
+.upload-button:hover {
+    color: orange;
+}
   
   .file-name {
     margin-left: 10px;
