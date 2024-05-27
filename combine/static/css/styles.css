@@ -323,6 +323,7 @@ label {
 .error {
     display: inline-block;
     color: orange;
+    padding: 0 0 0 5px;
 }
 
 a.bigLink {
@@ -396,7 +397,6 @@ p.title {
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
   }
   
 .tooltip .tooltiptext {
@@ -412,6 +412,11 @@ p.title {
     top: -40px;
     left: 50px;
     font-size: 14px;
+}
+
+.tooltip .fieldName {
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    cursor: pointer;
 }
 
 .tooltip a {
