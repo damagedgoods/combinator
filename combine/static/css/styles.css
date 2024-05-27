@@ -45,11 +45,31 @@ body {
     height: 100%
 }
 
+@keyframes indexParagraphs {
+    to {opacity: 1;}
+  }
+
 #main #left p {
+    opacity: 0;
     font-size: 48px;
     font-weight: 400;
     line-height: 64px;
     margin: 0 0 64px 0;
+    animation-name: indexParagraphs;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+.delay-3 {
+    animation-delay: 0.6s;
 }
 
 #main #left p a {
@@ -222,14 +242,41 @@ a:hover {
 }
 
 
-ul {
-
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-ul#collections {
+ul#collections_list li {
+    transform: translateX(100px);
+    opacity: 0;
+    animation-name: slideInFromRight;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+ul#collections_list li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+ul#collections_list li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+ul#collections_list li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* ul#collections {
 	margin: 0 0 0 32px;
     display: inline-block;
-}
+} */
 
 ul#items{
 	margin: 32px 0 0 0;
@@ -248,7 +295,7 @@ ul#items li.item{
     transition-timing-function: ease-in-out;
 }
 
-ul#collections li {
+/* ul#collections li {
 	display: inline-block;
 	padding: 0 32px 0 0;
 	font-size: 16px;
@@ -256,7 +303,7 @@ ul#collections li {
     transition: opacity 0.2s ease;
     transition-delay: calc(var(--n)*0.1s);
 }
-
+ */
 button.reload {
 	position: absolute;
 	left: 64px;
@@ -382,7 +429,7 @@ span.intensify {
     width: 300px;
 }
 
-#main #left #avanti {
+/* #main #left #avanti {
     margin: 96px 0 0 0;
     font-weight: 300;
     font-size: 14px; 
@@ -397,7 +444,7 @@ span.intensify {
 #main #left #avanti a:hover {
     color: orange;
 }
-
+ */
 p.title {
     font-size: 48px;
     font-weight: 400;
