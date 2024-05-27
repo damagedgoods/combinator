@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.shortcuts import redirect
-
+from slugify import slugify
 
 from .models import Collection, Part, Item
 import json
@@ -28,7 +28,19 @@ def create(request):
     name = request.POST.get('name')
     password = request.POST.get('password')
 
+    # Check if the slug already exists, return error if it does
+    existingSlugs = Collection.objects.filter(slug=slugify(name))
+    if len(existingSlugs) > 0:
+        template = loader.get_template("new.html")
+        context = {
+            "name": name,
+            "nameError": "already exists."
+        }
+        return HttpResponse(template.render(context, request))
+
     if request.FILES:
+
+        # Check if the file can be parsed, return error if it can't
         try:
             content = request.FILES['fileInput'].read().decode('utf-8')
         except:
@@ -36,7 +48,7 @@ def create(request):
             template = loader.get_template("new.html")
             context = {
                 "name": name,
-                "fileError": "The file not valid"
+                "fileError": "is not valid."
             }
             return HttpResponse(template.render(context, request))
 
