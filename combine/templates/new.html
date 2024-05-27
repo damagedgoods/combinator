@@ -21,19 +21,30 @@
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
-			<label>Set name <span id="nameError" class="error"></span></label>
-			<span class="explanation">How would you call this random generator?</span>
-			<input type="text" id="name" name="name"/>
-			
+			<div class="fieldContainer">
+				<label class="tooltip">
+					Set name
+					<span class="tooltiptext">It will be used for your mix URL</span>
+					<span id="nameError" class="error"></span>
+				</label>
+				<input type="text" id="name" name="name"/>			
+			</div>
 
-			<label>Password, if you want one</label>
-			<span class="explanation">Just in case you want to be the only person to edit it in the future</span>
-			<input type="password" id="password" name="password"/>
+			<!-- <label class="tooltip">
+				Password
+				<span class="tooltiptext">Just in case you want to be the only person to edit it in the future</span>
+				<input type="password" id="password" name="password"/>
+			</label> -->
+			<div class="fieldContainer">
+				<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
+				<label for="file" class="tooltip">
+					CSV file
+					<span class="tooltiptext">CSV file containing all your concepts. <a>Learn more</a></span>
+					<span id="fileError" class="error"></span>
+				</label>
+				<a class="upload-button" id="upload-button" onclick="document.getElementById('fileInput').click()">No File</a>
+			</div>
 
-			<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
-			<label for="file">CSV file with all your possible values <span id="fileError" class="error"></span></label>
-			<a class="upload-button" id="upload-button" onclick="document.getElementById('fileInput').click()">No File</a>
-			
 			<input type="submit" value="Submit &rarr;"></input>
 
 		</form>

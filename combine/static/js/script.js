@@ -182,7 +182,7 @@ var csrfcookie = function() {
 function validateNewCollection(event) {
   event.preventDefault();
   let name = document.getElementById('name').value;
-  let password = document.getElementById('password').value;
+  // let password = document.getElementById('password').value;
   let fileInput = document.getElementById('fileInput').value;
   let valid = true;
 
@@ -243,5 +243,15 @@ function updateFileName() {
   }
 }
 
+function showTip(name){
+  var x = document.getElementById("icon_"+name).getBoundingClientRect().top;
+  var y = document.getElementById("icon_"+name).getBoundingClientRect().left;
+  document.getElementById("tooltip_"+name).style.left = x+"px";
+  document.getElementById("tooltip_"+name).style.top = y+"px";
+  document.getElementById("tooltip_"+name).style.display = "inline-block";
+}
 
+function hideTip(name){
+  document.getElementById("tooltip_"+name).style.display = "none";
+}
 
