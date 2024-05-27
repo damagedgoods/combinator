@@ -250,20 +250,21 @@ button.reload {
     font-size: 60px; /* Tamaño de la fuente */
     width: 120px;
     height: 120px;
+    
 
-    transition-duration: 0.2s;
+    transition-duration: 0.1s;
     transition-property: background-color, transform;
     transition-timing-function: ease-in-out;
 }
 
 button.reload:hover {
     background-color: orange;
-    transform: rotate(90deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
 }
 
 button.reload:active {
-    transform: translateY(2px);
-    transform: rotate(90deg);
+    transform: translateY(5px);
 }
 
 
