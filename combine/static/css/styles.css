@@ -387,6 +387,9 @@ p.title {
     text-decoration: none;
     border-bottom: 3px solid #111;
     width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
   
 .upload-button:hover {
