@@ -241,7 +241,7 @@ input[type=text].newItem {
     width: 90%;
     font-size: 28px;
     line-height: 48px;
-    font-weight: 300;
+    font-weight: 400;
     border-bottom: 3px solid orange;
     background-color: transparent;
 }
