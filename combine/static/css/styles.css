@@ -426,10 +426,17 @@ input[type=submit] {
     margin: 96px 0 0 0; 
     cursor: pointer;
     opacity: 0;
+    transition-duration: 0.1s;
+    transition-property: transform, color;
+    transition-timing-function: ease-in-out;
 }
 
 input[type=submit]:hover {
     color: orange;
+}
+
+input[type=submit]:active {
+    transform: translateY(3px);
 }
 
 label {
@@ -454,9 +461,15 @@ a.backLink {
     clear: both;
     display: block;
     cursor: pointer; 
-
     animation-name: slideInFromRight;
     animation-duration: 1s;
+    transition-duration: 0.1s;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+}
+
+a.backLink:active {
+    transform: translateY(3px);
 }
 
 a.bigLink {
@@ -475,11 +488,20 @@ span.intensify {
 
 #cta {
     position: relative;
+    transition-duration: 0.1s;
+    transition-property: transform, color;
+    transition-timing-function: ease-in-out;    
 }
 
 #cta a {
     position: relative;
 }
+
+#cta a:active {
+    transform: translateY(3px);
+}
+
+
 
 #glow {
     position: absolute;
@@ -568,3 +590,4 @@ p.title {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
