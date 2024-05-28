@@ -84,11 +84,13 @@ def collection(request, slug):
     template = loader.get_template("collection.html")
     collections = Collection.objects.all()
     c = Collection.objects.get(slug=slug)
+    edit = not c.highlighted
     context = {
         "collections": collections,
         "id": c.id,
         "slug": slug,
-        "collection_name": c.name
+        "collection_name": c.name,
+        "edit": edit
         }
     return HttpResponse(template.render(context, request))
 
