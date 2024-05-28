@@ -16,19 +16,19 @@
 	<div id="main">
 		<a class="backLink" href="../..">&larr;</a>		
 
-		<p class="title">Ok, now let's create<br/>a new MixMaster set.</p>
+		<p class="title fadeIn delay-1">Ok, now let's create<br/>a new MixMaster set.</p>
 
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
-			<div class="fieldContainer">
+			<div class="fieldContainer fadeIn delay-2">
 				<label class="tooltip">
 					<span class="fieldName">Name</span><span class="tooltiptext">It will be used for your mix URL</span><span id="nameError" class="error">{{ nameError }}</span>
 				</label>
 				<input type="text" id="name" name="name"  value="{{ name }}"/>			
 			</div>
 
-			<div class="fieldContainer">
+			<div class="fieldContainer fadeIn delay-3">
 				<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
 				<label for="file" class="tooltip">
 					<span class="fieldName">CSV file</span><span class="tooltiptext">CSV file containing all your concepts. <a>Learn more</a></span><span id="fileError" class="error">{{ fileError }}</span>
@@ -36,7 +36,7 @@
 				<a class="upload-button" id="upload-button" onclick="document.getElementById('fileInput').click()">No File</a>
 			</div>
 
-			<input type="submit" value="Submit &rarr;"></input>
+			<input type="submit" class="fadeIn delay-4" value="Submit &rarr;"></input>
 
 		</form>
 

@@ -32,7 +32,6 @@ body {
 	text-align: left;
 	padding: 0;
     width: 90%;
-    position: relative;
 }
 
 #main #left {
@@ -46,9 +45,15 @@ body {
     height: 100%
 }
 
-@keyframes indexParagraphs {
+@keyframes fadeIn {
     to {opacity: 1;}
   }
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
 
 #main #left p {
     opacity: 0;
@@ -56,9 +61,6 @@ body {
     font-weight: 400;
     line-height: 64px;
     margin: 0 0 64px 0;
-    animation-name: indexParagraphs;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
 }
 
 .delay-1 {
@@ -71,6 +73,10 @@ body {
 
 .delay-3 {
     animation-delay: 0.6s;
+}
+
+.delay-4 {
+    animation-delay: 0.8s;
 }
 
 #main #left p a {
@@ -90,6 +96,14 @@ body {
     font-weight: 800;
     line-height: 64px;
     text-decoration: none;
+}
+
+
+
+#main .animated {
+    
+
+
 }
 
 #footer {
@@ -129,10 +143,11 @@ div.edit_items {
     display: block;
     width: 33%;
     float: left;
+    margin: 32px 0 0 0;
 }
 
-div.edit_items {
-    margin: 32px 0 0 0;
+div.edit_items ul {
+    opacity: 0;
 }
 
 div.edit_items ul li{
@@ -404,6 +419,7 @@ input[type=submit] {
     background: none;
     margin: 96px 0 0 0; 
     cursor: pointer;
+    opacity: 0;
 }
 
 input[type=submit]:hover {
@@ -421,7 +437,8 @@ label {
 }
 
 a.backLink {
-    position: absolute;
+    position: fixed;
+    margin: 64px;
     top: 0px;
     right: 0px;
     line-height: 64px;
@@ -431,6 +448,9 @@ a.backLink {
     clear: both;
     display: block;
     cursor: pointer; 
+
+    animation-name: slideInFromRight;
+    animation-duration: 1s;
 }
 
 a.bigLink {
@@ -442,7 +462,6 @@ a.bigLink {
     margin: 32px 0;
     cursor: pointer; 
 }
-
   
 span.intensify {
     font-weight: 800;
@@ -484,6 +503,7 @@ p.title {
     font-size: 48px;
     font-weight: 400;
     width: 60%;
+    opacity: 0;
 }
 
 .file-input {
@@ -542,6 +562,9 @@ p.title {
     text-decoration: underline;
 }
 
+.fieldContainer {
+    opacity: 0;
+}
 .fieldContainer input {
     display: block;
     font-size: 32px;

@@ -16,11 +16,11 @@
 
 	<div id="main">
         <a class="backLink" href="./">&larr;</a>
-        <p class="title">Add items to your set, <br/>or delete them.</p>
+        <p class="title fadeIn">Add items to your set, <br/>or delete them.</p>
 
         {% for p in data %}
         <div class="edit_items">
-            <ul>
+            <ul class="fadeIn delay-{{ forloop.counter }}">
                 <li class="partNumber"> {{ forloop.counter }}</li>
                 {% for it in p.items %}
 				<li><span><abbr title="{{ it.value }}">{{ it.value }}</abbr></span><a id={{it.id}} onclick="deleteItem(this)" class="deleteAction" alt="BLAH"><i class="deleteIcon"></i></a></li>
