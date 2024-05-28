@@ -382,7 +382,7 @@ form {
 
 label {
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     margin: 32px 0 0 0;
 }
@@ -397,6 +397,7 @@ span.explanation {
 input[type=text], input[type=password] {
     margin: 16px 0 0 0;
     border: none;
+    padding: 0 0 10px 0;
     border-bottom: 3px solid #111;
     font-size: 48px;
     font-weight: 400;
@@ -506,6 +507,7 @@ p.title {
     background-color: transparent;
     color: #111;
     margin: 16px 24px 0 0;
+    padding: 0 0 10px 0;
     font-size: 32px;
     text-decoration: none;
     border-bottom: 3px solid #111;
