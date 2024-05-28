@@ -306,6 +306,18 @@ ul#items li.item{
     transition-delay: calc(var(--n)*0.1s);
 }
  */
+
+@keyframes slideInBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translatey(0);
+        opacity: 1;
+    }
+}
+
 button.reload {
 	position: absolute;
 	left: 64px;
@@ -323,6 +335,14 @@ button.reload {
     font-size: 60px; /* Tamaño de la fuente */
     width: 120px;
     height: 120px;
+    transform: translate(100px);
+    opacity: 0;
+
+    animation-name: slideInBottom;
+    animation-duration: 0.5s;  
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 
     transition-duration: 0.1s;
     transition-property: background-color, transform, box-shadow;
