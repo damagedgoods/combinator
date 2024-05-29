@@ -705,9 +705,14 @@ p.title {
 }
 
 #successMessage {
+    position: absolute;
     opacity: 0;
     display: none;
-    margin: 200px auto;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-100px);
     width: 600px;
     text-align: center;
     font-size: 64px;
