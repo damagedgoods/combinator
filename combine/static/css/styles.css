@@ -665,13 +665,12 @@ p.title {
     display: inline-block;
     background-color: black;
     color: #fff;
-    padding: 10px 15px;
-    border-radius: 20px 20px 20px 0;
+    padding: 10px 15px;    
     text-wrap: nowrap;   
     position: absolute;
     z-index: 1;
     top: -30px;
-    left: 10px;
+    
     font-size: 14px;
     font-weight: 200;
     transition-duration: 0.3s;
@@ -682,6 +681,16 @@ p.title {
 
 .helpMarks:hover span.helpMessage {
     opacity: 1;
+}
+
+.helpMarks span.right {
+    left: 10px;
+    border-radius: 20px 20px 20px 0;
+}
+
+.helpMarks span.left {
+    right: 10px;
+    border-radius: 20px 20px 0px 20px;
 }
 
 @keyframes pulse {
