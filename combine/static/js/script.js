@@ -1,10 +1,6 @@
 
 var data, keys;
-var helpMarksActive;
-
-// function sleep(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
+var helpMarksActive = false;
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
@@ -244,6 +240,8 @@ const showMessage = async (message) => {
 }
 
 const showHelpMarks = async (helpMarks, delay) => {
+
+  await sleep(delay);
 
   if (helpMarksActive) {
     var items = document.getElementsByClassName("helpMarks");
