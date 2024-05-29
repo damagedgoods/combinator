@@ -625,16 +625,11 @@ p.title {
 
 .helpMarks {
     opacity: 0;
-    width: 20px;
-    height: 20px;
     position: absolute;
-    background-color: orange;
-    border-radius: 15px;
     transition-duration: 0.2s;
     transition-property: opacity;
     transition-timing-function: ease-in-out;
-
-    animation: pulse 1s infinite;
+    cursor: pointer;
 }
 
 .visibleHelpMarks {
@@ -656,8 +651,37 @@ p.title {
     right: 45px;
 }
 
-.helpMarks span {
-    display: none;
+.helpMarks span.spot {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border-radius: 15px;
+    animation: pulse 1s infinite;
+}
+
+.helpMarks span.helpMessage {
+    opacity: 0;
+    display: inline-block;
+    background-color: black;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px 20px 20px 0;
+    text-wrap: nowrap;   
+    position: absolute;
+    z-index: 1;
+    top: -30px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: 200;
+    transition-duration: 0.3s;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.helpMarks:hover span.helpMessage {
+    opacity: 1;
 }
 
 @keyframes pulse {
