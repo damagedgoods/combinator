@@ -276,3 +276,11 @@ const showHelpMarks = async (helpMarks, delay) => {
     helpMarksActive = true;
   }
 }
+
+function getNamePlaceholder() {
+
+  placeholders = ["My Great Mix", "My Awesome Mix", "My Fantastic Mix", "My Imperial Mix", "My Spectacular Mix", "My Exceptional Mix", "My Legendary Mix"];
+  return placeholders[randomNumber(0, placeholders.length - 1)];
+  
+
+}
