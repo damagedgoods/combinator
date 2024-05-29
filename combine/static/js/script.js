@@ -4,7 +4,19 @@ var helpMarksActive = false;
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
-function load(id) {
+const load = async (id, newCollection, helpMarks) => {  
+
+  if (newCollection == "True") {
+    await sleep(300);    
+    document.getElementById('successMessage').style.opacity = 1;
+    document.getElementById('successMessage').style.display = "block";
+    await sleep(2000);    
+    document.getElementById('successMessage').style.opacity = 0;
+    document.getElementById('successMessage').style.display = "None";
+    await sleep(300);
+  }
+
+  document.getElementById('reload').style.animationPlayState = 'running';
 
   fetch('../../data/collection/'+id)
   .then(response => response.json())
@@ -23,7 +35,11 @@ function load(id) {
       list.appendChild(el);
     }
     
-    run()
+    run();
+
+    if (newCollection == 'True') {
+      showHelpMarks(helpMarks, 1000);
+    }
   })
   .catch(error => {
     console.error('Se produjo un error al cargar el archivo JSON:', error);
@@ -43,7 +59,8 @@ const run = async () => {
     items = data[keys[k]];
     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
     document.getElementById(keys[k]).style.opacity = 1;
-  }      
+  }
+
 }
 
 function randomNumber(min, max) {

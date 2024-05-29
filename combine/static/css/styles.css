@@ -312,16 +312,6 @@ ul#items li.item{
     transition-timing-function: ease-in-out;
 }
 
-/* ul#collections li {
-	display: inline-block;
-	padding: 0 32px 0 0;
-	font-size: 16px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    transition-delay: calc(var(--n)*0.1s);
-}
- */
-
 @keyframes slideInBottom {
     0% {
         transform: translateY(100px);
@@ -353,6 +343,7 @@ button.reload {
     transform: translate(100px);
     opacity: 0;
 
+    animation-play-state: paused;
     animation-name: slideInBottom;
     animation-duration: 0.5s;  
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
@@ -711,4 +702,18 @@ p.title {
 #checkDemos {
     opacity: 0;
     line-height: 64px;
+}
+
+#successMessage {
+    opacity: 0;
+    display: none;
+    margin: 200px auto;
+    width: 600px;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 64px;
+    transition-duration: 0.3s;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
 }

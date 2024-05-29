@@ -19,6 +19,8 @@
 <body>
 
 	<div id="message"></div>
+	
+	<div id="successMessage">Got it.<br/>I created your list.</div>	
 
 	<div id="helpSentence" class="helpMarks">
 		<span class="spot"></span>
@@ -41,20 +43,25 @@
 
 	<div id="footer"><span>Powered by <a href="/combine/">MixMaster</a></span><span><a href="javascript:showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 0)" id="edit">Help</a></span>{% if edit %}<span><a href="./edit" id="edit"">Edit this set</a>{% endif %}</span></div>
 
-	<button class="reload" onclick="javascript:run()">&rarr;</button>
+	<button id="reload" class="reload" onclick="javascript:run()">&rarr;</button>
 
 </body>
 </html>
 
 <script>
-load({{ id }});
 
-{% if message %}
-	showMessage("{{ message }}");
-{% endif %}
+helpMarks = ['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}];
+load({{ id }}, '{{ new }}', helpMarks);
 
-{% if new %}
-	showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 1000);
-{% endif %}
+// load({{ id }}, 'True');
+message = '{{ message }}';
+
+// {% if message %}
+// 	showMessage("{{ message }}");
+// {% endif %}
+
+// {% if new %}
+// 	showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 1000);
+// {% endif %}
 
 </script>
