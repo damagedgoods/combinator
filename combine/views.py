@@ -4,7 +4,7 @@ import csv
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
-from django.shortcuts import redirect
+from django.shortcuts import redirect, reverse
 from slugify import slugify
 
 from .models import Collection, Part, Item
@@ -78,20 +78,34 @@ def create(request):
                     newItem.save()
                     pos += 1
 
-    return redirect("collection", slug=c.slug)
+    url = reverse('collection', kwargs={'slug': c.slug})    
+    query_params = f'?new=True'
+    
+    return redirect(url + query_params)
+
 
 def collection(request, slug):
+
+    new = request.GET.get('new')
+
     template = loader.get_template("collection.html")
     collections = Collection.objects.all()
     c = Collection.objects.get(slug=slug)
     edit = not c.highlighted
+
+    message = None
+    if new:
+        message = "Set created"
     context = {
         "collections": collections,
         "id": c.id,
         "slug": slug,
         "collection_name": c.name,
-        "edit": edit
+        "edit": edit,
+        "message": message,
+        "new": new
         }
+    
     return HttpResponse(template.render(context, request))
 
 def edit(request, slug):

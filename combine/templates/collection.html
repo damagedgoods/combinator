@@ -14,15 +14,37 @@
 
 <body>
 
+	<div id="message"></div>
+	<div id="helpSentence" class="helpMarks">
+		<span>This is one help message</span>
+	</div>
+	<div id="helpReload" class="helpMarks">
+		<span>This is another help message</span>
+	</div>
+	<div id="helpEdit" class="helpMarks">
+		<span>And this is the last help message</span>
+	</div>
+
 	<div id="main">
 		<ul id="items"></ul>
 	</div>
 
-	<div id="footer"><span>Powered by <a href="../..">MixMaster</a></span>{% if edit %}<span><a href="./edit" id="edit"">Edit this set</a>{% endif %}</span></div>
+	<div id="footer"><span>Powered by <a href="/combine/">MixMaster</a></span><span><a href="javascript:showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 0)" id="edit">Help</a></span>{% if edit %}<span><a href="./edit" id="edit"">Edit this set</a>{% endif %}</span></div>
 
 	<button class="reload" onclick="javascript:run()">&rarr;</button>
 
 </body>
 </html>
 
-<script>load({{ id }});</script>
+<script>
+load({{ id }});
+
+{% if message %}
+	showMessage("{{ message }}");
+{% endif %}
+
+{% if new %}
+	showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 500);
+{% endif %}
+
+</script>

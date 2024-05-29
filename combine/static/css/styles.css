@@ -19,7 +19,6 @@ ul li {
 
 body {
 	background-color: rgb(248, 246, 244);
-	transition: background-color 0.1s ease; /* Animación de transición para el cambio de color */	
 }
 
 #header {
@@ -171,9 +170,9 @@ div.edit_items ul li:hover{
 }
 
 div.edit_items ul li.partNumber {
-    font-size: 24px;
-    font-weight: 300;   
-    margin: 64px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;   
+    margin: 64px 0 24px 0;
 }
 
 div.edit_items ul li.partNumber:hover{
@@ -599,3 +598,77 @@ p.title {
     display: none;
 }
 
+#message {
+    opacity: 0;
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 100px;
+    background-color: orange;
+    color: #111;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 15px;
+    border-radius: 20px;
+
+    transition-duration: 0.2s;
+    transition-property: opacity, transform;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
+    transition-delay: 1.0s;
+
+}
+
+#message.visible {
+    opacity: 1;
+    transform: translateY(50px)
+}
+
+.helpMarks {
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: orange;
+    border-radius: 15px;
+    /* box-shadow: 0 0 4px rgba(0,0,0,0.2); */
+
+    transform: scale(1);
+    animation: pulse 1s infinite;
+}
+
+.visibleHelpMarks {
+    opacity: 1;
+}
+
+#helpSentence {
+    top: 65px;
+    left: 45px;
+}
+
+#helpReload {
+    bottom: 170px;
+    left: 170px;    
+}
+
+#helpEdit {
+    bottom: 75px;
+    right: 45px;
+}
+
+.helpMarks span {
+    display: none;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.80);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.80);
+	}
+}

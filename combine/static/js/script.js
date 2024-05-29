@@ -1,5 +1,6 @@
 
 var data, keys;
+var helpMarksActive;
 
 // function sleep(ms) {
 //   return new Promise(resolve => setTimeout(resolve, ms));
@@ -228,15 +229,35 @@ function updateFileName() {
   }
 }
 
-// function showTip(name){
-//   document.getElementById("tooltip_"+name).style.left = x+"px";
-//   document.getElementById("tooltip_"+name).style.top = y+"px";
-//   // document.getElementById("tooltip_"+name).style.display = "inline-block";
-//   document.getElementById("tooltip_"+name).style.opacity = 1;
-// }
+const showMessage = async (message) => {
 
-// function hideTip(name){
-//   // document.getElementById("tooltip_"+name).style.display = "none";
-//   document.getElementById("tooltip_"+name).style.opacity = 0;
-// }
+  await sleep(500);
 
+  if (message) {
+    document.getElementById('message').innerHTML = message;
+    document.getElementById('message').classList.add("visible");
+    await sleep(2300);
+    document.getElementById('message').classList.remove("visible");
+
+  } else {
+  }
+}
+
+const showHelpMarks = async (helpMarks, delay) => {
+
+  if (helpMarksActive) {
+    var items = document.getElementsByClassName("helpMarks");
+    for (var i=0; i < items.length; i++) {
+      items[i].classList.remove("visibleHelpMarks");
+      await sleep(200);
+    }
+    helpMarksActive = false;
+  } else {
+    await sleep(delay);
+    for (var i=0; i < helpMarks.length; i++) {
+      document.getElementById(helpMarks[i]).classList.add("visibleHelpMarks");
+      await sleep(200);
+    }
+    helpMarksActive = true;
+  }
+}
