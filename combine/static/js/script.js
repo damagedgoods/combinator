@@ -228,15 +228,15 @@ function updateFileName() {
   }
 }
 
-function showTip(name){
-  var x = document.getElementById("icon_"+name).getBoundingClientRect().top;
-  var y = document.getElementById("icon_"+name).getBoundingClientRect().left;
-  document.getElementById("tooltip_"+name).style.left = x+"px";
-  document.getElementById("tooltip_"+name).style.top = y+"px";
-  document.getElementById("tooltip_"+name).style.display = "inline-block";
-}
+// function showTip(name){
+//   document.getElementById("tooltip_"+name).style.left = x+"px";
+//   document.getElementById("tooltip_"+name).style.top = y+"px";
+//   // document.getElementById("tooltip_"+name).style.display = "inline-block";
+//   document.getElementById("tooltip_"+name).style.opacity = 1;
+// }
 
-function hideTip(name){
-  document.getElementById("tooltip_"+name).style.display = "none";
-}
+// function hideTip(name){
+//   // document.getElementById("tooltip_"+name).style.display = "none";
+//   document.getElementById("tooltip_"+name).style.opacity = 0;
+// }
 

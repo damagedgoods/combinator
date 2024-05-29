@@ -551,22 +551,33 @@ p.title {
   }
   
 .tooltip .tooltiptext {
-    visibility: hidden;
+    opacity: 0;
     display: inline-block;
     background-color: black;
     color: #fff;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 20px 20px 20px 0;
     text-wrap: nowrap;   
     position: absolute;
     z-index: 1;
-    top: -40px;
+    top: -30px;
     left: 50px;
     font-size: 14px;
+    font-weight: 200;
+
+    transition-duration: 0.3s;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+    transform: translateY(-10px);
 }
 
 .tooltip .fieldName {
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    border-bottom: 1px dotted #111;
     cursor: pointer;
 }
 
@@ -586,9 +597,5 @@ p.title {
   
 .fieldContainer input[type="file"] {
     display: none;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
 }
 
