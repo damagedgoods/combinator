@@ -295,11 +295,6 @@ ul#collections_list li:nth-child(3) {
     animation-delay: 0.6s;
 }
 
-/* ul#collections {
-	margin: 0 0 0 32px;
-    display: inline-block;
-} */
-
 ul#items{
 	margin: 32px 0 0 0;
 }
@@ -343,16 +338,16 @@ button.reload {
 	left: 64px;
 	bottom: 64px;
 	background-color: black;
-    color: white; /* Color del texto */
-    border: none; /* Para eliminar los bordes predeterminados */
-    border-radius: 60px; /* Bordes redondeados */
-    padding: 10px; /* Ajuste del espaciado interno */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */	
+    color: white;
+    border: none;
+    border-radius: 60px;
+    padding: 10px;
+    cursor: pointer;
 	font-optical-sizing: auto;
 	font-weight: 300;
 	font-style: normal;
     text-align: center;
-    font-size: 60px; /* Tamaño de la fuente */
+    font-size: 60px;
     width: 120px;
     height: 120px;
     transform: translate(100px);
@@ -713,20 +708,7 @@ p.title {
 	}
 }
 
-.written {
-    /* font-family: "Walter Turncoat", cursive; */
-    /* font-family: "Covered By Your Grace", cursive; */
-    font-weight: 300;
-    font-style: normal;    
-    font-size: 14px;
-    color: #111;
-}
-
 #checkDemos {
     opacity: 0;
     line-height: 64px;
-    /* transform: rotate(-40deg); */
-    /* position: absolute;
-    left: -100px;
-    top: 30px; */
 }
