@@ -30,7 +30,6 @@ body {
     margin: 64px;
 	text-align: left;
 	padding: 0;
-    width: 90%;
 }
 
 #main #left {
@@ -66,16 +65,32 @@ body {
     animation-delay: 0.2s;
 }
 
+.tdelay-1 {
+    transition-delay: 0.2s;
+}
+
 .delay-2 {
     animation-delay: 0.4s;
+}
+
+.tdelay-2 {
+    transition-delay: 0.4s;
 }
 
 .delay-3 {
     animation-delay: 0.6s;
 }
 
+.tdelay-3 {
+    transition-delay: 0.6s;
+}
+
 .delay-4 {
     animation-delay: 0.8s;
+}
+
+.tdelay-4 {
+    transition-delay: 0.8s;
 }
 
 #main #left p a {
@@ -289,12 +304,31 @@ ul#collections_list li:nth-child(3) {
     animation-delay: 0.6s;
 }
 
-/* ul#collections {
-	margin: 0 0 0 32px;
+#sentence {
+    white-space: normal;
     display: inline-block;
-} */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
 
-ul#items{
+#sentence span {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    opacity: 0;
+    display: inline-block;
+	font-size: 100px;
+	font-weight: 700;
+	color: #111;
+    text-wrap: wrap;
+    letter-spacing: -0.02em;
+    margin: 0 24px 0 0;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;    
+}
+
+/* ul#items{
 	margin: 32px 0 0 0;
 }
 ul#items li {
@@ -304,12 +338,11 @@ ul#items li {
 	color: #111;
     letter-spacing: -0.02em;	
 }
-
 ul#items li.item{
     transition-duration: 0.2s;
     transition-property: transform, opacity;
     transition-timing-function: ease-in-out;
-}
+} */
 
 /* ul#collections li {
 	display: inline-block;
@@ -355,7 +388,7 @@ button.reload {
     animation-name: slideInBottom;
     animation-duration: 0.5s;  
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
-    animation-delay: 1s;
+    animation-delay: 1.3s;
     animation-fill-mode: forwards;
 
     transition-duration: 0.1s;

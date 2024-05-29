@@ -10,20 +10,22 @@ function load(id) {
   .then(response => response.json())
   .then(rdata => {
     data = rdata;
-    list = document.getElementById('items');
-    list.innerHTML = '';
+    sentence = document.getElementById('sentence');
+    sentence.innerHTML = '';
     keys = Object.keys(data);
     i = 0;
+    
     for (k in keys) {
       i++;
-      el = document.createElement('li');
+      el = document.createElement('span');
       el.id = keys[k];
       el.classList.add("item");
+      el.classList.add("delay-"+i);
       el.style.cssText += "opacity:1;--n:"+i;
-      list.appendChild(el);
+      sentence.appendChild(el);
     }
     
-    run()
+    run();
   })
   .catch(error => {
     console.error('Se produjo un error al cargar el archivo JSON:', error);
@@ -37,6 +39,8 @@ const run = async () => {
   for (i=0; i< items.length; i++) {
     items[i].style.opacity = 0;
   }
+
+  await sleep(200);
 
   for (k in keys) {
     await sleep(200);
