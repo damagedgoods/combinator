@@ -171,9 +171,9 @@ div.edit_items ul li:hover{
 }
 
 div.edit_items ul li.partNumber {
-    font-size: 48px;
-    font-weight: 400;   
-    margin: 0 0 32px 0;
+    font-size: 24px;
+    font-weight: 300;   
+    margin: 64px 0 0 0;
 }
 
 div.edit_items ul li.partNumber:hover{
