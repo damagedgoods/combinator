@@ -4,8 +4,9 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("howto/", views.howto, name="howto"),
     path("collection/new/", views.new, name="new_collection"),
-    path("collection/create/", views.create, name="create_collection"),
+    path("collection/create/", views.create, name="create_collection"),    
     path("collection/<slug:slug>/", views.collection, name="collection"),
     path("collection/<slug:slug>/edit", views.edit, name="edit"),
     path("data/collection/<int:collection_id>/", views.itemsJSON, name="itemsJSON"),

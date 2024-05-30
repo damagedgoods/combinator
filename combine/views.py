@@ -124,6 +124,11 @@ def edit(request, slug):
         }
     return HttpResponse(template.render(context, request))
 
+def howto(request):
+    template = loader.get_template("howto.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
+
 def itemsJSON(request, collection_id):
     c = Collection.objects.get(pk=collection_id)
     data = {}
@@ -157,3 +162,5 @@ def newItemJSON(request):
     data["message"] = "OK"
     data["id"] = i.pk
     return JsonResponse(data, safe=False)
+
+
