@@ -707,18 +707,22 @@ p.title {
 #successMessage {
     position: absolute;
     opacity: 0;
-    display: none;
+    display: block;
     margin: auto;
+    line-height: 1.2;
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-100px);
-    width: 600px;
+    width: 80%;
     text-align: center;
     font-size: 64px;
     font-weight: 800;
-    line-height: 64px;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
     transition-property: opacity;
     transition-timing-function: ease-in-out;
+}
+
+#successMessage.visible {
+    opacity: 1;
 }

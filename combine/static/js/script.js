@@ -7,13 +7,17 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 const load = async (id, newCollection, helpMarks) => {  
 
   if (newCollection == "True") {
-    await sleep(300);    
-    document.getElementById('successMessage').style.opacity = 1;
-    document.getElementById('successMessage').style.display = "block";
-    await sleep(2000);    
-    document.getElementById('successMessage').style.opacity = 0;
-    document.getElementById('successMessage').style.display = "None";
     await sleep(300);
+    // document.getElementById('successMessage').style.display = "block";
+    // document.getElementById('successMessage').style.opacity = 1;    
+
+    document.getElementById('successMessage').classList.add("visible");
+
+    await sleep(1500);
+    // document.getElementById('successMessage').style.display = "None";
+    // document.getElementById('successMessage').style.opacity = 0;
+    document.getElementById('successMessage').classList.remove("visible");    
+    await sleep(500);
   }
 
   document.getElementById('reload').style.animationPlayState = 'running';

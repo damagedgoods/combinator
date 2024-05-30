@@ -20,7 +20,7 @@
 
 	<div id="message"></div>
 	
-	<div id="successMessage">Got it.<br/>I created your list.</div>	
+	<p id="successMessage">Ok, I created your mix.<br/>Wanna check it?</p>	
 
 	<div id="helpSentence" class="helpMarks">
 		<span class="spot"></span>
@@ -53,15 +53,6 @@
 helpMarks = ['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}];
 load({{ id }}, '{{ new }}', helpMarks);
 
-// load({{ id }}, 'True');
 message = '{{ message }}';
-
-// {% if message %}
-// 	showMessage("{{ message }}");
-// {% endif %}
-
-// {% if new %}
-// 	showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 1000);
-// {% endif %}
 
 </script>
