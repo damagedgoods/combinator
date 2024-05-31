@@ -284,6 +284,6 @@ const showHelpMarks = async (helpMarks, delay) => {
 }
 
 function getNamePlaceholder() {
-  placeholders = ["My Great Mix", "My Awesome Mix", "My Fantastic Mix", "My Imperial Mix", "My Spectacular Mix", "My Exceptional Mix", "My Legendary Mix"];
+  placeholders = ["My Radiant Mix", "My Nebulous Mix", "My Luminescent Mix", "My Astral Mix", "My Euphoric Mix", "My Resplendent Mix", "My Transcendent Mix", "My Enigmatic Mix", "My Ethereal Mix", "My Vibrant Mix", "My Whimsical Mix", "My Serene Mix", "My Eclectic Mix", "My Mystical Mix", "My Bombastic Mix"];
   return placeholders[randomNumber(0, placeholders.length - 1)];
 }
