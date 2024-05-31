@@ -40,10 +40,8 @@ const run = async () => {
     items[i].style.opacity = 0;
   }
 
-  await sleep(200);
-
   for (k in keys) {
-    await sleep(200);
+    await sleep(600);
     items = data[keys[k]];
     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
     document.getElementById(keys[k]).style.opacity = 1;

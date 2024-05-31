@@ -381,7 +381,7 @@ button.reload {
     animation-name: slideInBottom;
     animation-duration: 0.5s;  
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
-    animation-delay: 1.3s;
+    animation-delay: 2.5s;
     animation-fill-mode: forwards;
 
     transition-duration: 0.1s;
