@@ -309,7 +309,7 @@ ul#collections_list li:nth-child(3) {
 }
 
 #sentence span {
-    display: inline-block;
+    display: inline;
     opacity: 0;
 	font-size: 100px;
 	font-weight: 700;
