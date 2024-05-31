@@ -744,6 +744,13 @@ span.intensify {
 .howto p {
     opacity: 0;
     margin: 16px 0 0 0;
+    line-height: 24px;
+}
+
+.howto p a {
+    font-weight: 300;
+    word-break: normal;
+    display: inline;
 }
 
 .howto .left{
@@ -764,4 +771,9 @@ span.intensify {
 .howto .right ul li a {
     font-weight: 300;
     text-decoration: none;
+}
+
+#footnote {
+    margin: 64px 0 0 0;
+    font-size: 12px;
 }
