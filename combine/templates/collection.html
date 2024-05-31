@@ -37,7 +37,7 @@
 		<ul id="items"></ul>
 	</div>
 
-	<div id="footer"><span>Powered by <a href="/combine/">MixMaster</a></span><span><a href="javascript:showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 0)" id="edit">Help</a></span>{% if edit %}<span><a href="./edit" id="edit"">Edit this set</a>{% endif %}</span></div>
+	<div id="footer"><span>Powered by <a href="/combine/">the MixMaster</a></span><span><a href="javascript:showHelpMarks(['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}], 0)" id="edit">Help</a></span>{% if edit %}<span><a href="./edit" id="edit"">Edit this set</a>{% endif %}</span></div>
 
 	<button id="reload" class="reload" onclick="javascript:run()">&rarr;</button>
 
@@ -45,10 +45,5 @@
 </html>
 
 <script>
-
-helpMarks = ['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}];
-load({{ id }}, '{{ new }}', helpMarks);
-
-message = '{{ message }}';
-
+load({{ id }}, '{{ new }}', ['helpSentence','helpReload'{% if edit %}, 'helpEdit'{% endif %}]);
 </script>
