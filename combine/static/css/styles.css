@@ -115,7 +115,7 @@ ul li {
 
 #main #right{
     position: relative;
-    width: 30%;
+    width: 35%;
     float: right;
 }
 
@@ -294,6 +294,8 @@ ul#collections_list li {
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
+    word-break: keep-all;
+    overflow: hidden;
 }
 
 ul#collections_list li:nth-child(1) {
@@ -307,6 +309,16 @@ ul#collections_list li:nth-child(2) {
 ul#collections_list li:nth-child(3) {
     animation-delay: 0.6s;
 }
+
+ul#collections_list li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+ul#collections_list li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+
 
 ul#items{
 	margin: 32px 0 0 0;
@@ -427,7 +439,7 @@ input[type=submit] {
     text-decoration: none;
     border: none;
     background: none;
-    margin: 96px 0 0 0; 
+    margin: 64px 0 0 0; 
     cursor: pointer;
     opacity: 0;
     transition-duration: 0.1s;
@@ -761,7 +773,7 @@ span.intensify {
 }
 
 .content .left{
-    width: 50%;
+    width: 60%;
     float: left;
 }
 
@@ -780,8 +792,8 @@ span.intensify {
     text-decoration: none;
 }
 
-#footnote {
-    margin: 64px 0 0 0;
+.footnote {
+    margin: 16px 0 0 0;
     font-size: 12px;
 }
 

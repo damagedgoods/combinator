@@ -29,9 +29,10 @@
 			<div class="fieldContainer fadeIn delay-3">
 				<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
 				<label for="file" class="tooltip">
-					<span class="fieldName">CSV file</span><span class="tooltiptext">CSV file containing all your concepts. <a href="../../howto">Learn more</a></span><span id="fileError" class="error">{{ fileError }}</span>
-				</label>
+					<span class="fieldName">CSV file</span><span class="tooltiptext">File with the content for the mix. <a href="../../howto">Learn more</a></span><span id="fileError" class="error">{{ fileError }}</span>
+				</label>				
 				<a class="upload-button" id="upload-button" onclick="document.getElementById('fileInput').click()">None</a>
+				<p class="footnote">Please don't upload sensitive information!</p>
 			</div>
 
 			<input type="submit" class="fadeIn delay-4 hovered" value="Submit &rarr;"></input>
