@@ -124,6 +124,12 @@ def edit(request, slug):
         }
     return HttpResponse(template.render(context, request))
 
+def about(request):
+    template = loader.get_template("about.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+
 def howto(request):
     template = loader.get_template("howto.html")
     context = {}
