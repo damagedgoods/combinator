@@ -14,14 +14,14 @@
 	<div id="main">
 		<a class="backLink" href="../..">&larr;</a>		
 
-		<h1 class="fadeIn delay-1">Ok, now let's create<br/>a new MixMaster set.</h1>
+		<h1 class="fadeIn delay-1">Ok, now let's create<br/>a new mix together.</h1>
 
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
 			<div class="fieldContainer fadeIn delay-2">
 				<label class="tooltip">
-					<span class="fieldName">Name</span><span class="tooltiptext">It will be used for your mix URL</span><span id="nameError" class="error">{{ nameError }}</span>
+					<span class="fieldName">Mix name</span><span class="tooltiptext">It will be used for your mix URL</span><span id="nameError" class="error">{{ nameError }}</span>
 				</label>
 				<input type="text" id="name" name="name" placeholder="My Mix Set" value="{{ name }}"/>			
 			</div>

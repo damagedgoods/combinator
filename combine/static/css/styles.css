@@ -737,38 +737,45 @@ span.intensify {
     opacity: 1;
 }
 
-.howto {
+.content {
     
 }
 
-.howto p {
+.content a.bigLink {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 32px 0 0 0;
+
+}
+
+.content p {
     opacity: 0;
     margin: 16px 0 0 0;
     line-height: 24px;
 }
 
-.howto p a {
+.content p a {
     font-weight: 300;
     word-break: normal;
     display: inline;
 }
 
-.howto .left{
+.content .left{
     width: 50%;
     float: left;
 }
 
-.howto .right{
+.content .right{
     margin: 56px 0 0 0;
     width: 30%;
     float: right;
 }
 
-.howto .right ul li {
+.content .right ul li {
     margin: 22px 0 0 0;
 }
 
-.howto .right ul li a {
+.content .right ul li a {
     font-weight: 300;
     text-decoration: none;
 }
@@ -776,4 +783,26 @@ span.intensify {
 #footnote {
     margin: 64px 0 0 0;
     font-size: 12px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0) translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(3deg) translateY(20px);
+        opacity: 1;
+    }
+}
+
+#csv-image {
+    margin: 24px 0 0 0;
+    float: right;
+    opacity: 0;
+    width: 45%;
+    transform: rotate(3deg);
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
