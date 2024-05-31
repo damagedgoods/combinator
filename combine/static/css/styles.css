@@ -806,6 +806,15 @@ span.intensify {
     text-decoration: none;
 }
 
+img#about-glow {
+    width: 250px;
+}
+
+.header {
+    margin: 64px 0 0 0;
+    width: 100%;
+}
+
 .footnote {
     margin: 16px 0 0 0;
     font-size: 12px;
