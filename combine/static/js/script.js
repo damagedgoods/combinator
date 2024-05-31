@@ -8,14 +8,8 @@ const load = async (id, newCollection, helpMarks) => {
 
   if (newCollection == "True") {
     await sleep(300);
-    // document.getElementById('successMessage').style.display = "block";
-    // document.getElementById('successMessage').style.opacity = 1;    
-
     document.getElementById('successMessage').classList.add("visible");
-
     await sleep(1500);
-    // document.getElementById('successMessage').style.display = "None";
-    // document.getElementById('successMessage').style.opacity = 0;
     document.getElementById('successMessage').classList.remove("visible");    
     await sleep(500);
   }
@@ -182,20 +176,28 @@ var csrfcookie = function() {
   return cookieValue;
 };
 
+const shake = async (field) => {
+  document.getElementById(field).classList.remove("fadeIn"); // It creates problems when manipulating the fieldError classes
+  document.getElementById(field).classList.add("fieldError");
+  await sleep(1000);
+  document.getElementById(field).classList.remove("fieldError");
+}
+
 function validateNewCollection(event) {
   event.preventDefault();
   let name = document.getElementById('name').value;
-  // let password = document.getElementById('password').value;
   let fileInput = document.getElementById('fileInput').value;
   let valid = true;
 
   if (name.trim() === '') {
     document.getElementById('nameError').textContent = 'is mandatory';
+    shake('name-container');
     valid = false;
   }
 
   if (fileInput === '') {
     document.getElementById('fileError').textContent = 'is mandatory';
+    shake('file-container');
     valid = false;
   }
 
@@ -207,6 +209,8 @@ function validateName() {
   let valid = true;
   if (name.trim() === '') {
     document.getElementById('nameError').textContent = 'is mandatory';
+    document.getElementById('name-container').classList.add("fieldError");        
+    shake('name-container');
     valid = false;
   } else {
     document.getElementById('nameError').textContent = '';
@@ -220,6 +224,8 @@ function validateFile() {
   let valid = true;
   if (fileValue.trim() === '') {
     document.getElementById('fileError').textContent = 'is mandatory';
+    document.getElementById('file-container').classList.add("fieldError");  
+    shake('file-container');
     valid = false;
   } else {
     document.getElementById('fileError').textContent = '';
@@ -247,15 +253,12 @@ function updateFileName() {
 }
 
 const showMessage = async (message) => {
-
   await sleep(500);
-
   if (message) {
     document.getElementById('message').innerHTML = message;
     document.getElementById('message').classList.add("visible");
     await sleep(2300);
     document.getElementById('message').classList.remove("visible");
-
   } else {
   }
 }
@@ -263,7 +266,6 @@ const showMessage = async (message) => {
 const showHelpMarks = async (helpMarks, delay) => {
 
   await sleep(delay);
-
   if (helpMarksActive) {
     var items = document.getElementsByClassName("helpMarks");
     for (var i=0; i < items.length; i++) {
@@ -282,9 +284,6 @@ const showHelpMarks = async (helpMarks, delay) => {
 }
 
 function getNamePlaceholder() {
-
   placeholders = ["My Great Mix", "My Awesome Mix", "My Fantastic Mix", "My Imperial Mix", "My Spectacular Mix", "My Exceptional Mix", "My Legendary Mix"];
   return placeholders[randomNumber(0, placeholders.length - 1)];
-  
-
 }

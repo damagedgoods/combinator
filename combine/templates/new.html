@@ -19,14 +19,14 @@
 		<form id="newCollectionForm" class="new" action="../create/" method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 
-			<div class="fieldContainer fadeIn delay-2">
+			<div class="fieldContainer fadeIn delay-2" id="name-container">
 				<label class="tooltip">
 					<span class="fieldName">Mix name</span><span class="tooltiptext">It will be used for your mix URL</span><span id="nameError" class="error">{{ nameError }}</span>
 				</label>
 				<input type="text" id="name" name="name" placeholder="My Mix Set" value="{{ name }}"/>			
 			</div>
 
-			<div class="fieldContainer fadeIn delay-3">
+			<div class="fieldContainer fadeIn delay-3" id="file-container">
 				<input type="file" id="fileInput" name="fileInput" class="file-input" onchange="updateFileName()">
 				<label for="file" class="tooltip">
 					<span class="fieldName">CSV file</span><span class="tooltiptext">File with the content for the mix. <a href="../../howto">Learn more</a></span><span id="fileError" class="error">{{ fileError }}</span>
