@@ -20,23 +20,25 @@ const load = async (id, newCollection, helpMarks) => {
   .then(response => response.json())
   .then(rdata => {
     data = rdata;
-    list = document.getElementById('items');
-    list.innerHTML = '';
+    sentence = document.getElementById('sentence');
+    sentence.innerHTML = '';
     keys = Object.keys(data);
     i = 0;
+    
     for (k in keys) {
       i++;
-      el = document.createElement('li');
+      el = document.createElement('span');
       el.id = keys[k];
       el.classList.add("item");
+      el.classList.add("delay-"+i);
       el.style.cssText += "opacity:1;--n:"+i;
-      list.appendChild(el);
+      sentence.appendChild(el);
     }
     
     run();
 
     if (newCollection == 'True') {
-      showHelpMarks(helpMarks, 1000);
+      showHelpMarks(helpMarks, 1500);
     }
   })
   .catch(error => {
@@ -53,7 +55,7 @@ const run = async () => {
   }
 
   for (k in keys) {
-    await sleep(200);
+    await sleep(600);
     items = data[keys[k]];
     document.getElementById(keys[k]).textContent = items[randomNumber(0, items.length-1)];
     document.getElementById(keys[k]).style.opacity = 1;

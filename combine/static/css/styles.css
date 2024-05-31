@@ -102,16 +102,39 @@ ul li {
     animation-delay: 0.2s;
 }
 
+.tdelay-1 {
+    transition-delay: 0.2s;
+}
+
 .delay-2 {
     animation-delay: 0.4s;
+}
+
+.tdelay-2 {
+    transition-delay: 0.4s;
 }
 
 .delay-3 {
     animation-delay: 0.6s;
 }
 
+.tdelay-3 {
+    transition-delay: 0.6s;
+}
+
 .delay-4 {
     animation-delay: 0.8s;
+}
+
+.tdelay-4 {
+    transition-delay: 0.8s;
+}
+
+#main #left p a {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    text-decoration: none;
 }
 
 #main #right{
@@ -315,11 +338,22 @@ ul#collections_list li:nth-child(4) {
     animation-delay: 0.8s;
 }
 
-ul#collections_list li:nth-child(5) {
-    animation-delay: 1s;
+#sentence {
+    
 }
 
-
+#sentence span {
+    display: inline;
+    opacity: 0;
+	font-size: 100px;
+	font-weight: 700;
+	color: #111;
+    letter-spacing: -0.02em;
+    margin: 0 24px 0 0;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;    
+}
 
 ul#items{
 	margin: 32px 0 0 0;
@@ -331,7 +365,6 @@ ul#items li {
 	color: #111;
     letter-spacing: -0.02em;	
 }
-
 ul#items li.item{
     transition-duration: 0.2s;
     transition-property: transform, opacity;
@@ -373,7 +406,7 @@ button.reload {
     animation-name: slideInBottom;
     animation-duration: 0.5s;  
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
-    animation-delay: 1s;
+    animation-delay: 2.5s;
     animation-fill-mode: forwards;
 
     transition-duration: 0.1s;
