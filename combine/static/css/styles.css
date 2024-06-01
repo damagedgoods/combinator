@@ -813,14 +813,35 @@ span.intensify {
     line-height: 24px;
 }
 
-.content p a {
+.content ol {
+    position: relative;
+    padding: 0 0 0 30px;
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    line-height: 24px;
+}
+
+.content ol li {
+    counter-increment: my-awesome-counter;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 16px 0 0 0;
+}
+
+.content ol li::before {
+    position: absolute;
+    left: 0px;
+    content: counter(my-awesome-counter);
+}
+
+.content a {
     font-weight: 300;
     word-break: normal;
     display: inline;
 }
 
 .content .left{
-    width: 60%;
+    width: 55%;
     float: left;
 }
 
