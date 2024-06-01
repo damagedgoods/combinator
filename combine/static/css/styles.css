@@ -666,7 +666,7 @@ span.intensify {
     display: block;
     position: fixed;
     bottom: -20px;
-    left: 50%;
+    right: 50px;
     background-color: #111;
     color: white;
     font-size: 16px;
@@ -678,6 +678,10 @@ span.intensify {
     transition-duration: 0.5s;
     transition-property: opacity, transform;
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);  
+}
+
+#message a {
+    color: white;
 }
 
 #message.visible {

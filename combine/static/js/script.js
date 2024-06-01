@@ -1,5 +1,5 @@
 
-var data, keys;
+var data, keys, undo;
 var helpMarksActive = false;
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -89,18 +89,34 @@ function toggleShare() {
   }
 }
 
-function deleteItem(item) {
+const deleteItem = async (item) => {
 
-  showMessage("Ok, I deleted that item.");
+  message = "Ok, I deleted that item."
+  message += " <a href='javascript:undoDelete()'>Undo</a>"
+  showMessage(message);
+  item.parentNode.style.display = "none";
 
-  fetch("/combine/data/item/delete/"+item.id+"/")
-  .then(response => response.json())
-  .then(data => {
-    if (data.message == "OK") {
-      item.parentNode.remove();
-    }
-  })
-  .catch(error => console.error('Error:', error));
+  await sleep(2000);
+
+  if (!undo) {
+    fetch("/combine/data/item/delete/"+item.id+"/")
+    .then(response => response.json())
+    .then(data => {
+      if (data.message == "OK") {
+        item.parentNode.remove();
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  } else {
+    document.getElementById("message").innerHTML = "No problem, canceled!";
+    item.parentNode.style.display = "flex";
+  }
+
+  undo = false;
+}
+
+function undoDelete(item) {
+  undo = true;
 }
 
 function addItem(item) {
@@ -258,11 +274,10 @@ function updateFileName() {
 }
 
 const showMessage = async (message) => {
-  await sleep(500);
   if (message) {
     document.getElementById('message').innerHTML = message;
     document.getElementById('message').classList.add("visible");
-    await sleep(2300);
+    await sleep(2500);
     document.getElementById('message').classList.remove("visible");
   } else {
   }
