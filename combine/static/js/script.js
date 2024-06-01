@@ -90,6 +90,9 @@ function toggleShare() {
 }
 
 function deleteItem(item) {
+
+  showMessage("Ok, I deleted that item.");
+
   fetch("/combine/data/item/delete/"+item.id+"/")
   .then(response => response.json())
   .then(data => {
