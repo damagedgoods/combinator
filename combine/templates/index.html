@@ -4,9 +4,19 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The MixMaster</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 	<link rel="icon" href="../static/img/favicon.ico" type="image/ico" >
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+		@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap&text=↑→↓←");
+	</style>
+
 </head>
 
 <body>
@@ -18,19 +28,20 @@
 			<p id="cta" class="fadeIn delay-3">
 				<img id="glow" src="../static/img/glow.png"/>
 				<a href="./collection/new">Try me! &rarr;</a>
-			</p>			
-			
+			</p>
 		</div>
 		<div id="right">
-			<p id="checkDemos" class="fadeIn delay-4">Check my demos</p>
+			<p id="checkDemos" class="fadeIn delay-1">Check my demos</p>
 			<ul id="collections_list">
 				{% for c in collections %}
 					<li><a href="./collection/{{ c.slug }}">{{ c.name }} &rarr;</a></li>
-				{% endfor %}	
-				<li></li>
+				{% endfor %}
 			</ul>
-		</div>		
-		<p id="footer"><span>An experiment by <a href="#">AvantiTutti</a></span><span><a href="./about/">About the MixMaster</a></span></p>
+		</div>
+		<div id="footer" class="fadeIn delay-4">
+			<span>An experiment by <a href="#">AvantiTutti</a></span>
+			<span><a href="./about/">About the MixMaster</a></span>
+		</div>	
 	</div>
 
 </body>

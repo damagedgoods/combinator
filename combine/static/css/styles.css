@@ -3,11 +3,12 @@
 * {
 	margin: 0;
 	padding: 0;	
-	font-family: "Inter", sans-serif;
+
+    font-family: "Inter", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
-	font-style: normal;	    
-    
+    font-style: normal;
+    font-variation-settings: "slnt" 0;    
 }
 
 ::selection {
@@ -306,17 +307,12 @@ span.intensify {
 /* STRUCTURAL -------------------------------- */
 
 #main {
-	text-align: left;
-	padding: 0;
 }
 
 #main #left {
     font-size: 64px;
     font-weight: 800;
     line-height: 80px;
-    text-overflow: ellipsis;
-    position: fixed;
-    height: 100%
 }
 
 #main #left p {
@@ -324,30 +320,16 @@ span.intensify {
     font-weight: 400;
 }
 
-#main #left p a {
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 64px;
-    text-decoration: none;
-}
-
 #main #right{
-    position: relative;
+
 }
 
 #main #right ul li a {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 64px;
     text-decoration: none;
 }
 
-#footer {
-    position: absolute;
-    bottom: 64px;
-    right: 64px;
-    font-size: 14px; 
-}
+#checkDemos {
+}    
 
 @media only screen and (min-width: 480px) {
 
@@ -358,6 +340,9 @@ span.intensify {
     #main #left {
         width: 45%;
         float: left;
+        text-overflow: ellipsis;
+        position: fixed;
+        height: 100%    
     }
 
     #main #left p {
@@ -367,32 +352,115 @@ span.intensify {
     }    
 
     #main #right{
+        margin: 24px 0 0 0;
         position: relative;
         width: 35%;
         float: right;
     }
+
+    #main #right ul li a {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 64px;
+    }    
+
+    #footer {
+        position: absolute;
+        bottom: 64px;
+        right: 64px;
+        font-size: 14px; 
+    }
+
+    #footer span{
+        display: inline-block;
+        margin: 0 0 0 10px;
+        padding: 0 0 0 10px;
+        border-left: 1px solid #666;
+        font-weight: 300;
+    }
+
+    #cta {
+        position: relative;
+        transition-duration: 0.1s;
+        transition-property: transform, color;
+        transition-timing-function: ease-in-out;    
+    }
+
+    #cta a{
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 64px;
+        text-decoration: none;
+        position: relative;
+    }
+    
 }
 
 @media only screen and (max-width: 480px) {
 
     #main {
-        margin: 32px;
+        margin: 24px;
     }
 
-    #main #left {
-        width: 100%;
-        float: left;
+    #main #left {   
+        /* display: none; */
     }
 
     #main #left p {
         font-size: 32px;
-        line-height: 48px;
+        line-height: 40px;
         margin: 0 0 32px 0;
     }    
 
     #main #right{
-        width: 100%;
-        float: left;
+        padding: 0 0 24px 0;
+        overflow: hidden;
+    }
+
+    #main #right ul {
+    }
+    
+    #main #right ul li {
+        /* display: block; */
+    }
+
+    #main #right ul li a {
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 48px;
+    }
+    
+    #footer {
+        /* display: none; */
+        font-size: 14px;
+        margin: 16px 0 32px 0;
+    }    
+
+    #footer span{
+        display: block;
+        margin: 8px 0 0 0;
+        padding: 0;
+        border: none;
+        font-weight: 300;
+    }
+
+    #checkDemos {
+        display: none;
+    }    
+
+    #cta {
+        position: relative;
+        transition-duration: 0.1s;
+        transition-property: transform, color;
+        transition-timing-function: ease-in-out;    
+    }
+
+    #cta a{
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 32px;
+        text-decoration: none;
+        position: relative;
     }
 
 }
@@ -402,14 +470,6 @@ span.intensify {
 #footer a {
     font-weight: 300;
     font-size: 14px; 
-}
-
-#footer span{
-    display: inline-block;
-    margin: 0 0 0 10px;
-    padding: 0 0 0 10px;
-    border-left: 1px solid #666;
-    font-weight: 300;
 }
 
 #footer span:first-child{
@@ -521,6 +581,10 @@ input[type=text].newItem {
 
 /* HOME PAGE -------------------------------- */
 
+ul#collections_list {
+    margin: 16px 0 0 0;    
+}
+
 ul#collections_list li {
     transform: translateX(100px);
     opacity: 0;
@@ -550,7 +614,6 @@ ul#collections_list li:nth-child(4) {
 
 #checkDemos {
     opacity: 0;
-    line-height: 64px;
 }
 
 /* MIX PAGE -------------------------------- */
